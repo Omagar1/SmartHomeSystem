@@ -5,6 +5,7 @@
 #include"HomeDevice.h"
 #include"HomeSystem.h"
 #include"HomeSystemFunctions.h"
+#include "CommonFunctions.h"
 using namespace std;
 
 
@@ -16,11 +17,16 @@ int main() {
 #endif
 	// main program
 	HomeSystem* test = new HomeSystem("test");
-	/*test->menu();*/
+	test->menu();
 
 
 	// --- tests --
 
+	/*string test = "help,ME,Pls"; 
+	vector<string>* testVector = CommonFunctions::split(test, ',');
+	for (string str : *testVector) {
+		cout << str << "\n"; 
+	}*/
 
 	//string testData1[] = { "\n-----Test 1: Home Smart System Menu----- \n", 
 	//	"Enter From the following:\n", 
@@ -36,4 +42,8 @@ int main() {
 	//unordered_map<string, function<bool()>> menuFunctions;
 	//menuFunctions["option0"] = &(HomeSystemFunctions::notDevelopedYet); 
 	//menuFunctions["option0"]();
+	
+	// end program
+
+	delete(test);
 }

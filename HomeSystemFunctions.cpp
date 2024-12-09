@@ -1,5 +1,7 @@
 #include "HomeSystemFunctions.h"
-void HomeSystemFunctions::menu(map<string, string> dispaly, map<char, function<bool()>> functions, vector<string> dontDisplay) {
+#include "CommonFunctions.h"
+
+void HomeSystemFunctions::menu(map<string, string> dispaly, map<char, functionData> functions, vector<string> dontDisplay) {
 	bool exit = false;
 	do {
 		string input;
@@ -10,12 +12,19 @@ void HomeSystemFunctions::menu(map<string, string> dispaly, map<char, function<b
 
 		// runs related funcution if input is a key of functions
 		if (functions.find(input[0]) != functions.end()) {
+
 			char key = input[0];
-			/*string parameters = input.erase(0, 1);
-			exit = ! (parameters != NULL)? functions[key](parameters): functions[key]();*/
+			if (functions[key].type == NO_PARAMS) {
+				exit = !functions[key].function.funcWithoutParams();
+			}
+			else {
+				vector<string>* parameters = { CommonFunctions::split(input.erase(0,1), ',') };
+				exit = !functions[key].function.funcWithParams(parameters);
+
+			}
 		}
 		else {
-			cout << "Invalid input Try again: \n";
+			cout << "\n ### Invalid input Try again: \n";
 		}
 	} while (!exit);
 	

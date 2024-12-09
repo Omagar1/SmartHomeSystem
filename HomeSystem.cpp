@@ -3,8 +3,13 @@
 #include "HomeSystem.h"
 #include "HomeDevice.h"
 #include "HomeSystemFunctions.h"
+#include "string"; 
 
-HomeSystem::HomeSystem(string name, vector<HomeDevice>* devices, int numDevices) : name(name), devices(devices), numDevices(numDevices) {}
+HomeSystem::HomeSystem(string name, vector<HomeDevice>* devices, int numDevices) : name(name), devices(devices), numDevices(numDevices) {
+	// test will put in better format 
+	this->deviceTypes.display["1"] = "Light"; 
+	this->deviceTypes.functions['1'] = { HomeSystem::createLight, NO_PARAMS};
+}
 
 void HomeSystem::menu() {
 	
@@ -22,15 +27,16 @@ void HomeSystem::menu() {
 		{"inputPrompt", "Input: "}
 	};
 	
+	functionData test; 
 
-	map<char, function<bool()>> menuFunctions;
-	menuFunctions['1'] = HomeSystemFunctions::notDevelopedYet; 
-	menuFunctions['2'] = HomeSystemFunctions::notDevelopedYet; 
-	menuFunctions['3'] = HomeSystemFunctions::notDevelopedYet; 
-	menuFunctions['4'] = HomeSystemFunctions::notDevelopedYet; 
-	menuFunctions['5'] = HomeSystemFunctions::notDevelopedYet; 
-	menuFunctions['['] = HomeSystemFunctions::notDevelopedYet; 
-	menuFunctions['9'] = []() { return false; };
+	map<char, functionData> menuFunctions;
+	menuFunctions['1'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
+	menuFunctions['2'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
+	menuFunctions['3'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
+	menuFunctions['4'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
+	menuFunctions['5'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
+	menuFunctions['['] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
+	menuFunctions['9'] = { HomeSystemFunctions::exit, NO_PARAMS };
 
 	vector<string> ignoreHeader = { "0header", "0intro", "inputPrompt" };
 
@@ -59,4 +65,9 @@ bool HomeSystem::isDevice(string name) {
 		}
 	}
 	return false;
+
+}
+void HomeSystem::addDevice() {
+	
+	HomeSystemFunctions::menu(deviceTypes.display, deviceTypes.functions);
 }

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystemFunctions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HomeSystemFunctions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HomeSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "HomeSystemFunctions.h",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystemFunctions.h",
               "RelativeDocumentMoniker": "HomeSystemFunctions.h",
@@ -38,12 +38,11 @@
               "RelativeToolTip": "HomeSystemFunctions.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-02T14:08:40.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-02T14:08:40.665Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "HomeSystemFunctions.cpp",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystemFunctions.cpp",
               "RelativeDocumentMoniker": "HomeSystemFunctions.cpp",
@@ -51,12 +50,11 @@
               "RelativeToolTip": "HomeSystemFunctions.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-02T14:08:16.277Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-02T14:08:16.277Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "HomeSystem.cpp",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystem.cpp",
               "RelativeDocumentMoniker": "HomeSystem.cpp",
@@ -64,18 +62,17 @@
               "RelativeToolTip": "HomeSystem.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-02T14:07:36.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-02T14:07:36.56Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-02T14:06:23.855Z",
               "EditorCaption": ""
