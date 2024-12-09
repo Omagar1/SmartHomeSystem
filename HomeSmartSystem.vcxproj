@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CommonFunctions.cpp" />
     <ClCompile Include="HomeDevice.cpp" />
     <ClCompile Include="HomeSystem.cpp" />
     <ClCompile Include="HomeSystemFunctions.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="TempHumidSensor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommonFunctions.h" />
     <ClInclude Include="HomeDevice.h" />
     <ClInclude Include="HomeSystem.h" />
     <ClInclude Include="HomeSystemFunctions.h" />
