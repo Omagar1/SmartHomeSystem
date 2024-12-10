@@ -12,7 +12,7 @@ HomeSystem::HomeSystem(string name, vector<HomeDevice>* devices, int numDevices)
 }
 
 void HomeSystem::menu() {
-	
+	// --- menu setup ---  
 	// numbers in headers are so they are displayed in correct order
 	map<string,string> menuDispaly = { 
 		{"0header", "\n-----" + this->name + " Home Smart System Menu----- \n"}, 
@@ -26,21 +26,46 @@ void HomeSystem::menu() {
 		{"9", " : Exit \n"}, 
 		{"inputPrompt", "Input: "}
 	};
+	vector<string> dontDisplay = { "0header", "0intro", "inputPrompt" };
+
 	
-	functionData<bool> test; 
 
-	map<char, functionData<bool>> menuFunctions;
-	menuFunctions['1'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
-	menuFunctions['2'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
-	menuFunctions['3'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
-	menuFunctions['4'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
-	menuFunctions['5'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
-	menuFunctions['['] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
-	menuFunctions['9'] = { HomeSystemFunctions::exit, NO_PARAMS };
+	map<char, function<bool()>> menuFunctions;
+	menuFunctions['1'] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['2'] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['3'] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['4'] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['5'] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['['] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['9'] = HomeSystemFunctions::exit;
 
-	vector<string> ignoreHeader = { "0header", "0intro", "inputPrompt" };
 
-	HomeSystemFunctions::menu(menuDispaly, menuFunctions, ignoreHeader);
+	// --- menue exicution ---
+	bool exit = false;
+	do {
+		string input;
+
+		HomeSystemFunctions::displayOptions(menuDispaly, dontDisplay);
+
+		cin >> input;
+
+		// runs related funcution if input is a key of functions
+		if (menufunctions.find(input[0]) != menufunctions.end()) {
+
+			char key = input[0];
+			if (menufunctions[key].type == NO_PARAMS) {
+				exit = !menufunctions[key].function.funcWithoutParams();
+			}
+			else {
+				vector<string>* parameters = { CommonFunctions::split(input.erase(0,1), ',') };
+				exit = !menufunctions[key].function.funcWithParams(parameters);
+
+			}
+		}
+		else {
+			cout << "\n ### Invalid input Try again: \n";
+		}
+	} while (!exit);
 }
 
 HomeDevice HomeSystem::findDevice(string name) {
@@ -68,12 +93,12 @@ bool HomeSystem::isDevice(string name) {
 
 }
 void HomeSystem::addDevice() {
+	// add relivent menu system
 	
-	HomeSystemFunctions::menu(deviceTypes.display, deviceTypes.functions);
 }
 
 Light* HomeSystem::createLight() {
-	LightParams params = Light::askForParams();
+	/*LightParams params = Light::askForParams();*/
 	Light* newLight = new Light(params.name, params.brightness);
 	return newLight;
 }

@@ -6,10 +6,9 @@
 #include "CommonFunctions.h"
 using namespace std; 
 
-template<typename ReturnType>
 struct DeviceTypes {
 	map<string, string> display;
-	map<char, functionData<ReturnType>> functions;
+	map<char, function<HomeDevice>> functions;
 };
 
 #pragma once
