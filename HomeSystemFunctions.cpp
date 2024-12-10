@@ -1,5 +1,6 @@
 #include "HomeSystemFunctions.h"
-void HomeSystemFunctions::menu(map<string, string> dispaly, map<char, function<bool()>> functions, vector<string> dontDisplay) {
+template<typename Class>
+void HomeSystemFunctions::menu(map<string, string> dispaly, map<char, function<bool()>> functions, Class object, vector<string> dontDisplay ) {
 	bool exit = false;
 	do {
 		string input;
@@ -11,14 +12,26 @@ void HomeSystemFunctions::menu(map<string, string> dispaly, map<char, function<b
 		// runs related funcution if input is a key of functions
 		if (functions.find(input[0]) != functions.end()) {
 			char key = input[0];
-			/*string parameters = input.erase(0, 1);
-			exit = ! (parameters != NULL)? functions[key](parameters): functions[key]();*/
+			
+			exit = !object->functions[key]();
 		}
 		else {
 			cout << "Invalid input Try again: \n";
 		}
-	} while (!exit);
-	
+	} while (!exit);	
+}
 
-	
+// devolped with help form MS co pilate  
+bool HomeSystemFunctions::canConvertToFloat(const string& str) {
+	try { 
+		stof(str); return true; 
+	} 
+	catch (const invalid_argument&) 
+	{ 
+		return false;
+
+	} 
+	catch (const out_of_range&) { 
+		return false; 
+	} 
 }

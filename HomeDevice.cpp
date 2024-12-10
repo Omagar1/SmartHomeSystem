@@ -4,12 +4,11 @@
 string HomeDevice::getName() {
 	return this->name; 
 }
-void HomeDevice::menue() {
+void HomeDevice::menu() {
 	cout << "Feature still in devlopment";
 }
 void HomeDevice::load() {
 	// get data from file
-
 }
 
 void  HomeDevice::quickView() {

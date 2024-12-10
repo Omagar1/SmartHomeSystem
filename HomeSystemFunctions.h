@@ -4,16 +4,25 @@
 #include <vector>
 #include <functional>
 #include<iostream>
+#include<string>
 using namespace std;
+
+struct Params {
+	string name;
+	bool paramsCorrect;
+};
+
 static class HomeSystemFunctions
 {
 public:
 	template <size_t N>
-	inline static void displayOptions(string(&outArr)[N], vector<string> dontDisplay = vector<string>() );
+	inline static void displayOptions(string(&outArr)[N], vector<string> dontDisplay = vector<string>());
 
 	inline static void displayOptions(map<string, string>outArr, vector<string> dontDisplay = vector<string>());
 	inline static bool notDevelopedYet();
-	static void menu(map<string,string> dispaly, map<char,function<bool()>> functions, vector<string> dontDisplay = vector<string>());
+	template<typename Class> 
+	static void menu(map<string, string> dispaly, map<char, function<bool()>> functions, Class object, vector<string> dontDisplay = vector<string>());
+	static bool canConvertToFloat(const string& str);
 };
 
 template <size_t N> // iterator workaround found from https://stackoverflow.com/questions/28653967/range-based-for-loop-throws-a-compiler-error-with-array-parameter

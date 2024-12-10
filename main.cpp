@@ -16,7 +16,7 @@ int main() {
 #endif
 	// main program
 	HomeSystem* test = new HomeSystem("test");
-	/*test->menu();*/
+	test->menu();
 
 
 	// --- tests --
@@ -36,4 +36,8 @@ int main() {
 	//unordered_map<string, function<bool()>> menuFunctions;
 	//menuFunctions["option0"] = &(HomeSystemFunctions::notDevelopedYet); 
 	//menuFunctions["option0"]();
+
+	// memory managemnt
+	delete(test); 
+	test = nullptr;
 }

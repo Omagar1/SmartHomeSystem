@@ -3,8 +3,9 @@
 #include "HomeSystem.h"
 #include "HomeDevice.h"
 #include "HomeSystemFunctions.h"
+#include "Light.h"
 
-HomeSystem::HomeSystem(string name, vector<HomeDevice>* devices, int numDevices) : name(name), devices(devices), numDevices(numDevices) {}
+HomeSystem::HomeSystem(string name, vector<HomeDevice*>* devices) : name(name), devices(devices) {}
 
 void HomeSystem::menu() {
 	
@@ -34,29 +35,65 @@ void HomeSystem::menu() {
 
 	vector<string> ignoreHeader = { "0header", "0intro", "inputPrompt" };
 
-	HomeSystemFunctions::menu(menuDispaly, menuFunctions, ignoreHeader);
+	HomeSystemFunctions::menu(menuDispaly, menuFunctions, this, ignoreHeader);
 }
 
-HomeDevice HomeSystem::findDevice(string name) {
+HomeDevice* HomeSystem::findDevice(string name) {
 	if (this->devices != nullptr) {
-		vector<HomeDevice>::iterator it(this->devices[0].begin());
+		vector<HomeDevice*>::iterator it(this->devices[0].begin());
 		while (it != this->devices[0].end()) {
-			if ((*it).getName() == name) {
+			if ( (*it)->getName() == name) {
 				return (*it);
 			}
 		}
 	}
-	return HomeDevice();
+	return nullptr;
 }
 
 bool HomeSystem::isDevice(string name) {
 	if (this->devices != nullptr) {
-		vector<HomeDevice>::iterator it(this->devices[0].begin());
+		vector<HomeDevice*>::iterator it(this->devices[0].begin());
 		while (it != this->devices[0].end()) {
-			if ((*it).getName() == name) {
+			if ((*it)->getName() == name) {
 				return true;
 			}
 		}
 	}
 	return false;
+}
+
+bool HomeSystem::addDevice() {
+
+	map<string, string> display = this->typeNames;
+	// numbers in headers are so they are displayed in correct order
+	display["0intro"] = "Enter from the following numbers to create corisponding devices:"; // spell check
+	display["inputPrompt"] = "Input: ";
+
+	vector<string> ignoreHeader = { "0intro", "inputPrompt" };
+
+	HomeSystemFunctions::menu(display, this->typeCreateFunctions, this,  ignoreHeader  );
+
+	return true; 
+}
+
+bool HomeSystem::createLight() {
+	// get params
+	LightParams* params = nullptr;
+	do {
+		if (params != nullptr) { cout << "\n ### Invalid Input ### \n ";  }
+
+		params = Light::getParams();
+	} while (!params->paramsCorrect || this->isDevice(params->name));
+
+	// Create new light object 
+	Light* newLight = new Light(params->name, params->brightness);
+
+	// Add object to devices vector 
+	this->devices->push_back(newLight); 
+	
+	// cleaning up memory
+	delete(params); 
+
+	return true; 
+	
 }

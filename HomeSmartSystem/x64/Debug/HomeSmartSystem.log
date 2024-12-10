@@ -1,0 +1,28 @@
+﻿  HomeDevice.cpp
+  HomeSystem.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(15,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'HomeSystem.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\Light.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'HomeSystem.cpp')
+  
+  HomeSystemFunctions.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(15,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'HomeSystemFunctions.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.cpp(27,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  Light.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\Light.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Light.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(15,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'Light.cpp')
+  
+  main.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(15,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'main.cpp')
+  
+  SleepDevice.cpp
+  Generating Code...
+HomeSystem.obj : error LNK2019: unresolved external symbol "public: static void __cdecl HomeSystemFunctions::menu<class HomeSystem *>(class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > >,class std::map<char,class std::function<bool __cdecl(void)>,struct std::less<char>,class std::allocator<struct std::pair<char const ,class std::function<bool __cdecl(void)> > > >,class HomeSystem *,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >)" (??$menu@PEAVHomeSystem@@@HomeSystemFunctions@@SAXV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@V?$map@DV?$function@$$A6A_NXZ@std@@U?$less@D@2@V?$allocator@U?$pair@$$CBDV?$function@$$A6A_NXZ@std@@@std@@@2@@2@PEAVHomeSystem@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@Z) referenced in function "public: bool __cdecl HomeSystem::addDevice(void)" (?addDevice@HomeSystem@@QEAA_NXZ)
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\x64\Debug\HomeSmartSystem.exe : fatal error LNK1120: 1 unresolved externals

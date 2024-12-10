@@ -5,6 +5,8 @@
 
 using namespace std;
 
+
+
 #pragma once
  class HomeDevice
 {
@@ -12,7 +14,7 @@ using namespace std;
 		/*HomeDevice(string name);*/
 		string getName();
 		virtual void quickView(); 
-		virtual void menue();
+		virtual void menu();
 		virtual void load(); 
 	protected:
 		inline bool getOnVal();
