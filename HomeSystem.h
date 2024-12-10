@@ -2,14 +2,14 @@
 #include<vector>
 #include"HomeDevice.h"
 #include"Light.h"
+#include "HomeSystemFunctions.h"
+#include "CommonFunctions.h"
 using namespace std; 
 
-struct params {
-	string name;
-};
+template<typename ReturnType>
 struct DeviceTypes {
 	map<string, string> display;
-	map<char, functionData> functions;
+	map<char, functionData<ReturnType>> functions;
 };
 
 #pragma once
@@ -31,7 +31,7 @@ class HomeSystem
 		bool Load(); */
 
 		// device create functions:
-		inline Light* createLight(); 
+		Light* createLight();
 	private:
 		string name;
 		DeviceTypes deviceTypes; 
@@ -40,8 +40,5 @@ class HomeSystem
 
 };
 
-inline Light* Light::createLight() {
-	LightParams params = Light::askForParams();
-	Light* newLight = new Light(params.name, params.brightness);
-}
+ 
 

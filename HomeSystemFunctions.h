@@ -9,14 +9,22 @@ using namespace std;
 
 enum funcType { NO_PARAMS, WITH_PARAMS };
 
-// multi signature pointer 
-union funcPointer {
-	bool(*funcWithoutParams)();
-	bool(*funcWithParams)(const vector<string>*);
+// structer so any params can be passed to any function 
+// note each smartDevice has a derived struct to pass their creeation params into 
+struct params {
+	string name;
 };
-// Define the struct to hold the function pointer and its type 
+
+// multi signature pointer
+template<typename ReturnType>
+union funcPointer {
+	ReturnType(*funcWithoutParams)();
+	ReturnType(*funcWithParams)(const params);
+};
+// struct to hold the function pointer and its type 
+template<typename ReturnType>
 struct functionData {
-	funcPointer function;
+	funcPointer<ReturnType> function;
 	funcType type;
 };
 
@@ -31,8 +39,8 @@ public:
 	inline static void displayOptions(map<string, string>outArr, vector<string> dontDisplay = vector<string>());
 	inline static bool notDevelopedYet();
 	inline static bool exit();
-
-	static void menu(map<string,string> dispaly, map<char, functionData> functions, vector<string> dontDisplay = vector<string>());
+	template<typename ReturnType>
+	static void menu(map<string,string> dispaly, map<char, functionData<ReturnType>> functions, vector<string> dontDisplay = vector<string>());
 	
 };
 

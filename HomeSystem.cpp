@@ -27,9 +27,9 @@ void HomeSystem::menu() {
 		{"inputPrompt", "Input: "}
 	};
 	
-	functionData test; 
+	functionData<bool> test; 
 
-	map<char, functionData> menuFunctions;
+	map<char, functionData<bool>> menuFunctions;
 	menuFunctions['1'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
 	menuFunctions['2'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
 	menuFunctions['3'] = { HomeSystemFunctions::notDevelopedYet, NO_PARAMS };
@@ -70,4 +70,10 @@ bool HomeSystem::isDevice(string name) {
 void HomeSystem::addDevice() {
 	
 	HomeSystemFunctions::menu(deviceTypes.display, deviceTypes.functions);
+}
+
+Light* HomeSystem::createLight() {
+	LightParams params = Light::askForParams();
+	Light* newLight = new Light(params.name, params.brightness);
+	return newLight;
 }

@@ -1,7 +1,7 @@
 #include "HomeSystemFunctions.h"
 #include "CommonFunctions.h"
-
-void HomeSystemFunctions::menu(map<string, string> dispaly, map<char, functionData> functions, vector<string> dontDisplay) {
+template<typename ReturnType>
+void HomeSystemFunctions::menu(map<string, string> dispaly, map<char, functionData<ReturnType>> functions, vector<string> dontDisplay) {
 	bool exit = false;
 	do {
 		string input;

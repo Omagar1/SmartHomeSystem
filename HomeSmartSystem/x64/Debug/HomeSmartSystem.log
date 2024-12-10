@@ -1,61 +1,17 @@
 ﻿  CommonFunctions.cpp
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(11,5): error C2143: syntax error: missing ';' before '<'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(31,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
   (compiling source file 'CommonFunctions.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(11,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,8): error C2143: syntax error: missing ';' before '*'
   (compiling source file 'CommonFunctions.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(11,29): error C2238: unexpected token(s) preceding ';'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,3): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   (compiling source file 'CommonFunctions.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,5): error C2143: syntax error: missing ';' before '<'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,23): error C2238: unexpected token(s) preceding ';'
   (compiling source file 'CommonFunctions.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,34): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,15): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,10): error C7524: 'inline' specifier cannot appear on a block-scope declaration or non-static data member
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,30): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,13): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C7525: inline variables require at least '/std:c++17'
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2059: syntax error: '{'
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2143: syntax error: missing ';' before '{'
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2447: '{': missing function header (old-style formal list?)
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(7,8): error C2011: 'params': 'struct' type redefinition
-  (compiling source file 'CommonFunctions.cpp')
-      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(7,8):
-      see declaration of 'params'
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8): error C2011: 'DeviceTypes': 'struct' type redefinition
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8): error C2953: 'DeviceTypes': class template has already been defined
   (compiling source file 'CommonFunctions.cpp')
       C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8):
       see declaration of 'DeviceTypes'
@@ -64,92 +20,27 @@ C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\
   (compiling source file 'CommonFunctions.cpp')
       C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(16,7):
       see declaration of 'HomeSystem'
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,13): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C7525: inline variables require at least '/std:c++17'
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C2086: 'int Light': redefinition
-  (compiling source file 'CommonFunctions.cpp')
-      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8):
-      see declaration of 'Light'
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2059: syntax error: '{'
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2143: syntax error: missing ';' before '{'
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2447: '{': missing function header (old-style formal list?)
-  (compiling source file 'CommonFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(23,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
-  (compiling source file 'CommonFunctions.cpp')
   
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\CommonFunctions.h(11,14): warning C4091: 'static ': ignored on left of 'CommonFunctions' when no variable is declared
   (compiling source file 'CommonFunctions.cpp')
   
   HomeSystem.cpp
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,12): error C2065: 'functionData': undeclared identifier
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(31,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
   (compiling source file 'HomeSystem.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,2): error C2923: 'std::map': 'functionData' is not a valid template type argument for parameter '_Ty'
-  (compiling source file 'HomeSystem.cpp')
-      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,12):
-      see declaration of 'functionData'
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,2): error C2976: 'std::map': too few template arguments
-  (compiling source file 'HomeSystem.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\map(72,7):
-      see declaration of 'std::map'
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,15): error C2143: syntax error: missing ';' before '*'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,8): error C2143: syntax error: missing ';' before '*'
   (compiling source file 'HomeSystem.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,10): error C7524: 'inline' specifier cannot appear on a block-scope declaration or non-static data member
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,3): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   (compiling source file 'HomeSystem.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,23): error C2238: unexpected token(s) preceding ';'
   (compiling source file 'HomeSystem.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,30): error C2238: unexpected token(s) preceding ';'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\CommonFunctions.h(11,14): warning C4091: 'static ': ignored on left of 'CommonFunctions' when no variable is declared
   (compiling source file 'HomeSystem.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,13): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C7525: inline variables require at least '/std:c++17'
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2059: syntax error: '{'
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2143: syntax error: missing ';' before '{'
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2447: '{': missing function header (old-style formal list?)
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(7,8): error C2011: 'params': 'struct' type redefinition
-  (compiling source file 'HomeSystem.cpp')
-      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(7,8):
-      see declaration of 'params'
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8): error C2011: 'DeviceTypes': 'struct' type redefinition
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8): error C2953: 'DeviceTypes': class template has already been defined
   (compiling source file 'HomeSystem.cpp')
       C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8):
       see declaration of 'DeviceTypes'
@@ -159,34 +50,10 @@ C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\
       C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(16,7):
       see declaration of 'HomeSystem'
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,13): error C2143: syntax error: missing ';' before '*'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8): error C2953: 'DeviceTypes': class template has already been defined
   (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C7525: inline variables require at least '/std:c++17'
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C2086: 'int Light': redefinition
-  (compiling source file 'HomeSystem.cpp')
-      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8):
-      see declaration of 'Light'
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2059: syntax error: '{'
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2143: syntax error: missing ';' before '{'
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2447: '{': missing function header (old-style formal list?)
-  (compiling source file 'HomeSystem.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(23,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
-  (compiling source file 'HomeSystem.cpp')
+      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8):
+      see declaration of 'DeviceTypes'
   
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(8,13): error C2027: use of undefined type 'HomeSystem'
@@ -197,6 +64,11 @@ C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(8,137): error C2550: '{ctor}': constructor initializer lists are only allowed on constructor definitions
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(10,2): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(11,2): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(11,51): error C2027: use of undefined type 'HomeSystem'
+      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(16,7):
+      see declaration of 'HomeSystem'
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(11,51): error C2065: 'createLight': undeclared identifier
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(12,1): warning C4508: '{ctor}': function should return a value; 'void' return type assumed
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(14,18): error C2027: use of undefined type 'HomeSystem'
       C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(16,7):
@@ -221,52 +93,32 @@ C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\
       C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(16,7):
       see declaration of 'HomeSystem'
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(72,28): error C2065: 'devices': undeclared identifier
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(72,45): error C2065: 'devices': undeclared identifier
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(72,63): error C2059: syntax error: ')'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(72,28): error C2065: 'deviceTypes': undeclared identifier
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(72,49): error C2065: 'deviceTypes': undeclared identifier
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(72,23): error C2672: 'HomeSystemFunctions::menu': no matching overloaded function found
+      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(43,14):
+      could be 'void HomeSystemFunctions::menu(std::map<std::string,std::string,std::less<std::string>,std::allocator<std::pair<const std::string,std::string>>>,std::map<char,functionData<ReturnType>,std::less<char>,std::allocator<std::pair<const char,functionData<ReturnType>>>>,std::vector<std::string,std::allocator<std::string>>)'
+          C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(72,23):
+          'void HomeSystemFunctions::menu(std::map<std::string,std::string,std::less<std::string>,std::allocator<std::pair<const std::string,std::string>>>,std::map<char,functionData<ReturnType>,std::less<char>,std::allocator<std::pair<const char,functionData<ReturnType>>>>,std::vector<std::string,std::allocator<std::string>>)': expects 3 arguments - 1 provided
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(75,20): error C2027: use of undefined type 'HomeSystem'
+      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(16,7):
+      see declaration of 'HomeSystem'
+  
   HomeSystemFunctions.cpp
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(23,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(31,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
   (compiling source file 'HomeSystemFunctions.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,15): error C2143: syntax error: missing ';' before '*'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,8): error C2143: syntax error: missing ';' before '*'
   (compiling source file 'HomeSystemFunctions.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,10): error C7524: 'inline' specifier cannot appear on a block-scope declaration or non-static data member
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,3): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   (compiling source file 'HomeSystemFunctions.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,23): error C2238: unexpected token(s) preceding ';'
   (compiling source file 'HomeSystemFunctions.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,30): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,13): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C7525: inline variables require at least '/std:c++17'
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2059: syntax error: '{'
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2143: syntax error: missing ';' before '{'
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2447: '{': missing function header (old-style formal list?)
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(7,8): error C2011: 'params': 'struct' type redefinition
-  (compiling source file 'HomeSystemFunctions.cpp')
-      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(7,8):
-      see declaration of 'params'
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8): error C2011: 'DeviceTypes': 'struct' type redefinition
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8): error C2953: 'DeviceTypes': class template has already been defined
   (compiling source file 'HomeSystemFunctions.cpp')
       C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8):
       see declaration of 'DeviceTypes'
@@ -275,146 +127,53 @@ C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\
   (compiling source file 'HomeSystemFunctions.cpp')
       C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(16,7):
       see declaration of 'HomeSystem'
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,13): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C7525: inline variables require at least '/std:c++17'
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C2086: 'int Light': redefinition
-  (compiling source file 'HomeSystemFunctions.cpp')
-      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8):
-      see declaration of 'Light'
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2059: syntax error: '{'
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2143: syntax error: missing ';' before '{'
-  (compiling source file 'HomeSystemFunctions.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2447: '{': missing function header (old-style formal list?)
-  (compiling source file 'HomeSystemFunctions.cpp')
   
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\CommonFunctions.h(11,14): warning C4091: 'static ': ignored on left of 'CommonFunctions' when no variable is declared
   (compiling source file 'HomeSystemFunctions.cpp')
   
   Light.cpp
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(11,5): error C2143: syntax error: missing ';' before '<'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(31,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
   (compiling source file 'Light.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(11,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,8): error C2143: syntax error: missing ';' before '*'
   (compiling source file 'Light.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(11,29): error C2238: unexpected token(s) preceding ';'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,3): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   (compiling source file 'Light.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,5): error C2143: syntax error: missing ';' before '<'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,23): error C2238: unexpected token(s) preceding ';'
   (compiling source file 'Light.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\CommonFunctions.h(11,14): warning C4091: 'static ': ignored on left of 'CommonFunctions' when no variable is declared
   (compiling source file 'Light.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,34): error C2238: unexpected token(s) preceding ';'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8): error C2953: 'DeviceTypes': class template has already been defined
   (compiling source file 'Light.cpp')
+      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8):
+      see declaration of 'DeviceTypes'
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,15): error C2143: syntax error: missing ';' before '*'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(16,7): error C2011: 'HomeSystem': 'class' type redefinition
   (compiling source file 'Light.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,10): error C7524: 'inline' specifier cannot appear on a block-scope declaration or non-static data member
-  (compiling source file 'Light.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Light.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,30): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Light.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,13): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Light.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C7525: inline variables require at least '/std:c++17'
-  (compiling source file 'Light.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Light.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Light.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2059: syntax error: '{'
-  (compiling source file 'Light.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2143: syntax error: missing ';' before '{'
-  (compiling source file 'Light.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2447: '{': missing function header (old-style formal list?)
-  (compiling source file 'Light.cpp')
+      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(16,7):
+      see declaration of 'HomeSystem'
   
   main.cpp
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(11,5): error C2143: syntax error: missing ';' before '<'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(31,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
   (compiling source file 'main.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(11,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,8): error C2143: syntax error: missing ';' before '*'
   (compiling source file 'main.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(11,29): error C2238: unexpected token(s) preceding ';'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,3): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   (compiling source file 'main.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,5): error C2143: syntax error: missing ';' before '<'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,23): error C2238: unexpected token(s) preceding ';'
   (compiling source file 'main.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\CommonFunctions.h(11,14): warning C4091: 'static ': ignored on left of 'CommonFunctions' when no variable is declared
   (compiling source file 'main.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(12,34): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,15): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,10): error C7524: 'inline' specifier cannot appear on a block-scope declaration or non-static data member
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(34,30): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,13): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C7525: inline variables require at least '/std:c++17'
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2059: syntax error: '{'
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2143: syntax error: missing ';' before '{'
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2447: '{': missing function header (old-style formal list?)
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(7,8): error C2011: 'params': 'struct' type redefinition
-  (compiling source file 'main.cpp')
-      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(7,8):
-      see declaration of 'params'
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8): error C2011: 'DeviceTypes': 'struct' type redefinition
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8): error C2953: 'DeviceTypes': class template has already been defined
   (compiling source file 'main.cpp')
       C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8):
       see declaration of 'DeviceTypes'
@@ -424,37 +183,10 @@ C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\
       C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(16,7):
       see declaration of 'HomeSystem'
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,13): error C2143: syntax error: missing ';' before '*'
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8): error C2953: 'DeviceTypes': class template has already been defined
   (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C7525: inline variables require at least '/std:c++17'
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8): error C2086: 'int Light': redefinition
-  (compiling source file 'main.cpp')
-      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,8):
-      see declaration of 'Light'
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2059: syntax error: '{'
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2143: syntax error: missing ';' before '{'
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(42,29): error C2447: '{': missing function header (old-style formal list?)
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(23,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
-  (compiling source file 'main.cpp')
-  
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\CommonFunctions.h(11,14): warning C4091: 'static ': ignored on left of 'CommonFunctions' when no variable is declared
-  (compiling source file 'main.cpp')
+      C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(10,8):
+      see declaration of 'DeviceTypes'
   
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\main.cpp(19,35): error C2027: use of undefined type 'HomeSystem'
       C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.h(16,7):
