@@ -15,7 +15,7 @@ struct DeviceTypes {
 class HomeSystem
 {
 	public:
-		HomeSystem(string name, vector<HomeDevice*>* devices = nullptr);
+		HomeSystem(string name, vector<HomeDevice*>* devices = new vector<HomeDevice*>());
 		void menu();
 		HomeDevice* findDevice(string name);
 		bool isDevice(string name);
@@ -34,7 +34,7 @@ class HomeSystem
 		string name;
 		vector<HomeDevice*>* devices;
 
-		const map<string, string> typeNames = { { "1", "Light" } };
+		const map<string, string> typeNames = { { "1", ": Light\n" } };
 		const map<char, function<bool()>> typeCreateFunctions = { { '1' , [this]() {return this->createLight(); } } };
 
 }; 

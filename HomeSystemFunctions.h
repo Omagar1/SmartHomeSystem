@@ -4,12 +4,17 @@
 #include <vector>
 #include <functional>
 #include<iostream>
+
+
 #include<string>
+#include "HomeSystem.h"
+
 using namespace std;
 
 struct Params {
 	string name;
 	bool paramsCorrect;
+	string errorMsg; 
 };
 
 static class HomeSystemFunctions
@@ -21,7 +26,7 @@ public:
 	inline static void displayOptions(map<string, string>outArr, vector<string> dontDisplay = vector<string>());
 	inline static bool notDevelopedYet();
 	template<typename Class> 
-	static void menu(map<string, string> dispaly, map<char, function<bool()>> functions, Class object, vector<string> dontDisplay = vector<string>());
+	static void menuDisplay(const map<string, string> dispaly, const map<char, function<bool()>> functions, const Class object, const vector<string> dontDisplay = vector<string>());
 	static bool canConvertToFloat(const string& str);
 };
 
@@ -49,3 +54,26 @@ inline void HomeSystemFunctions::displayOptions(map<string, string>outArr , vect
 }
 inline bool HomeSystemFunctions::notDevelopedYet() { cout << "Feature still in devlopment"; return true; }
 
+template<typename Class>
+void HomeSystemFunctions::menuDisplay(map<string, string> dispaly, map<char, function<bool()>> functions, Class object, vector<string> dontDisplay) {
+	bool exit = false;
+	do {
+		string input;
+		functions['Q'] = []() { return false; };
+
+		HomeSystemFunctions::displayOptions(dispaly, dontDisplay);
+		cout << "Q: Exit \n"; 
+		cout << "Input: "; 
+		cin >> input;
+
+		// runs related funcution if input is a key of functions
+		if (functions.find(input[0]) != functions.end()) {
+			char key = input[0];
+
+			exit = !functions[key]();
+		}
+		else {
+			cout << "\n ### Invalid input Try again: ### \n";
+		}
+	} while (!exit);
+}

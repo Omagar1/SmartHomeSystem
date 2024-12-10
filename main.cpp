@@ -13,7 +13,10 @@ int main() {
 #ifdef _DEBUG
 	// _CrtSetBreakAlloc(x);
 	_onexit(_CrtDumpMemoryLeaks);
+
 #endif
+	
+
 	// main program
 	HomeSystem* test = new HomeSystem("test");
 	test->menu();
@@ -40,4 +43,5 @@ int main() {
 	// memory managemnt
 	delete(test); 
 	test = nullptr;
+	return 0; 
 }

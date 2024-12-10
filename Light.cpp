@@ -3,6 +3,7 @@ Light::Light(string name, float brightness = 1.00f): brightness(brightness) {}
 
 LightParams* Light::getParams() {
 	LightParams* params = new LightParams();
+	params->paramsCorrect = true; 
 	string temp;
 	cout << "\nDevice name: ";
 	cin >> temp;
@@ -10,7 +11,8 @@ LightParams* Light::getParams() {
 		params->name = temp; 
 	}
 	else {
-		params->paramsCorrect = false; 
+		params->paramsCorrect = false;
+		params->errorMsg = "Name cannot be blank!";
 	}
 
 	cout << "\nBrightness (between 0 and 1.00): ";
@@ -20,6 +22,7 @@ LightParams* Light::getParams() {
 	}
 	else {
 		params->paramsCorrect = false;
+		params->errorMsg = "enter a number between 0 and 1.00!";
 	}
 
 	return params;
