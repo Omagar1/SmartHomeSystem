@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
-
+#include "Params.h"
+#include "HomeSystemFunctions.h"
 #include "HomeDevice.h"
-#include "HomeSystemFunctions.h"; 
 
 struct LightParams : Params {
 	float brightness; 

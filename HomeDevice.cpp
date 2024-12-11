@@ -4,11 +4,23 @@
 string HomeDevice::getName() {
 	return this->name; 
 }
-void  HomeDevice::quickView() {
+
+// --- quick action stuff ---
+void HomeDevice::quickView() {
 	string output[] = {
-		this->name + ((this->on) ? "On" : "off") + " \n",
+		this->name + ((this->on) ? "On" : "Off") + " \n",
 	};
+	HomeSystemFunctions::displayOptions(output); 
 }
+string  HomeDevice::quickViewStr() {
+	return "Type: "+ (string)typeid(*this).name() + " Name: " + this->name + " Status: " + ((this->on) ? "On" : "Off") + " Quick Action: Switch " + ((!this->on) ? "On" : "Off") + " \n";
+}
+
+bool HomeDevice::quickAction() {
+	this->switchOnVal(); 
+	return true; 
+}
+
 void HomeDevice::menu() {
 	cout << "Feature still in devlopment";
 }

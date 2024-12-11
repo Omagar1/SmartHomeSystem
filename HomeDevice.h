@@ -1,23 +1,21 @@
+#pragma once
 #include<iostream>
 #include<vector>
-#include <ctime>
-
+#include "HomeSystemFunctions.h"
+#include "Params.h"
 
 using namespace std;
-struct Params {
-	string name;
-	bool paramsCorrect;
-	string errorMsg;
-};
 
-
-#pragma once
- class HomeDevice
+class HomeDevice
 {
 	public: 
 		/*HomeDevice(string name);*/
 		string getName();
-		virtual void quickView(); 
+		// --- quick action stuff ---
+		virtual void quickView();
+		virtual string quickViewStr();
+		virtual bool quickAction(); 
+		// --- rest of functions --- 
 		virtual void menu();
 		virtual void load(); 
 		static Params* getParams();

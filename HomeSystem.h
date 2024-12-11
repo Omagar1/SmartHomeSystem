@@ -1,7 +1,14 @@
+#pragma once
 #include<iostream>
 #include<vector>
 #include<map>
-#include"HomeDevice.h"
+#include "HomeDevice.h"
+#include "Light.h"
+#include "HomeSystemFunctions.h"
+
+
+
+
 using namespace std; 
 
 struct DeviceTypes {
@@ -10,8 +17,6 @@ struct DeviceTypes {
 };
 
 
-
-#pragma once
 class HomeSystem
 {
 	public:
@@ -20,10 +25,10 @@ class HomeSystem
 		HomeDevice* findDevice(string name);
 		bool isDevice(string name);
 		bool addDevice();
-		/*void selectDevice();
-		void quickDisplayDevice();
-		void listDevice(); 
-		void sortByName();
+		bool selectDevice();
+		//void quickDisplayDevice(); // skippng as requires reqork of menu system
+		bool listDevices(int startIndex = 0);
+		/*void sortByName();
 		void sortByDevice();
 		bool SaveOnExit();
 		bool Load(); */
@@ -36,6 +41,5 @@ class HomeSystem
 
 		const map<string, string> typeNames = { { "1", ": Light\n" } };
 		const map<char, function<bool()>> typeCreateFunctions = { { '1' , [this]() {return this->createLight(); } } };
-
 }; 
 

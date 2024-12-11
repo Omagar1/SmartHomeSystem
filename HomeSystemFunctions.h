@@ -4,10 +4,8 @@
 #include <vector>
 #include <functional>
 #include<iostream>
-
-
 #include<string>
-#include "HomeSystem.h"
+
 
 using namespace std;
 
@@ -17,7 +15,7 @@ static class HomeSystemFunctions
 {
 public:
 	template <size_t N>
-	inline static void displayOptions(string(&outArr)[N], vector<string> dontDisplay = vector<string>());
+	inline static void displayOptions(string(&outArr)[N]);
 
 	inline static void displayOptions(map<string, string>outArr, vector<string> dontDisplay = vector<string>());
 	inline static bool notDevelopedYet();
@@ -27,14 +25,9 @@ public:
 };
 
 template <size_t N> // iterator workaround found from https://stackoverflow.com/questions/28653967/range-based-for-loop-throws-a-compiler-error-with-array-parameter
-inline void HomeSystemFunctions::displayOptions(string (&outArr)[N], vector<string> dontDisplay) {
+inline void HomeSystemFunctions::displayOptions(string (&outArr)[N]) {
 	for (string line : outArr) {
-		if (find(dontDisplay.begin(), dontDisplay.end(), line.first) != dontDisplay.end()) {
-			cout << line.second;
-		}
-		else {
-			cout << line.first << line.second;
-		}
+		cout << line;
 	}
 }
 

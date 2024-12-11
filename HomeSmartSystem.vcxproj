@@ -141,6 +141,7 @@
     <ClInclude Include="HomeSystem.h" />
     <ClInclude Include="HomeSystemFunctions.h" />
     <ClInclude Include="Light.h" />
+    <ClInclude Include="Params.h" />
     <ClInclude Include="SleepDevice.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

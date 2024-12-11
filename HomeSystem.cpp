@@ -2,9 +2,6 @@
 #include <iostream>
 #include <functional>
 #include "HomeSystem.h"
-#include "HomeDevice.h"
-#include "HomeSystemFunctions.h"
-#include "Light.h"
 
 HomeSystem::HomeSystem(string name, vector<HomeDevice*>* devices) : name(name), devices(devices) {}
 
@@ -24,7 +21,7 @@ void HomeSystem::menu() {
 	
 
 	map<char, function<bool()>> menuFunctions;
-	menuFunctions['1'] = HomeSystemFunctions::notDevelopedYet; 
+	menuFunctions['1'] = [this]() {return this->listDevices();};
 	menuFunctions['2'] = HomeSystemFunctions::notDevelopedYet; 
 	menuFunctions['3'] = HomeSystemFunctions::notDevelopedYet; 
 	menuFunctions['4'] = HomeSystemFunctions::notDevelopedYet; 
@@ -66,12 +63,67 @@ bool HomeSystem::addDevice() {
 	map<string, string> display = this->typeNames;
 	// numbers in headers are so they are displayed in correct order
 	display["0intro"] = "Enter from the following numbers to create corisponding devices: \n "; // spell check
-	vector<string> ignoreHeader = { "0intro"};
+	vector<string> ignore = { "0intro"};
 
-	HomeSystemFunctions::menuDisplay<HomeSystem*>(display, this->typeCreateFunctions, this,  ignoreHeader );
+	HomeSystemFunctions::menuDisplay<HomeSystem*>(display, this->typeCreateFunctions, this,  ignore);
 
 	return true; 
 }
+bool HomeSystem::selectDevice() {
+	// skippng as requires rework of menu system
+	return true; 
+}
+
+
+bool HomeSystem::listDevices(int startIndex) {
+	int devicesLength = this->devices->size();
+	if (devicesLength != 0) {
+
+		// creating menue system
+		map<string, string> menuDispaly;
+		map<char, function<bool()>> menuFunctions;
+		vector<string> ignore = { "0intro", "0Page" };
+		
+
+		// numbers in headers are so they are displayed in correct order
+		menuDispaly["0intro"] = "Select from the following to do that device's Quick Action: \n";
+		menuDispaly["0Page"] = "Page " + to_string(devicesLength % (startIndex + 1)+1) + " of " + to_string(devicesLength % 10) + " \n";
+		int i;
+		for (i = startIndex; i < devicesLength && i < (startIndex + 10); i++) {
+			string indexStr = to_string(i + 1 - startIndex); // +1 so it's 1 to 9 and not 0 to 8; - startIndex so its consitently 1 to 9 and not 9 - 17 ect for diffent startIndex other than 0
+			char indexChar = indexStr[0];
+			const std::type_info& typeInfo = typeid((*(*devices)[i]));
+			HomeDevice* device = (*devices)[i];
+
+			// making sure I get the right class so the methods are correct
+			if (typeInfo == typeid(Light)) {
+				device = dynamic_cast<Light*>(device);
+			}
+			// add classes as they are made 
+			menuDispaly[indexStr] = ": " + device->getName() + "\n";
+			menuFunctions[indexChar] = [device]() {return device->quickAction(); };
+		}
+		// adding next page function
+		if (i < devicesLength) {
+			menuDispaly["N"] = ": Next Page \n";
+			menuFunctions['N'] = [this, i]() {return this->listDevices(i); }; // using i here as i will inciment then exit the for loop so will be thge next index for display
+		}
+		// adding previous page function
+		else if (i != 10) {
+			menuDispaly["P"] = ": Previous Page \n";
+			int previousStartIndex = i - 10; // as im goingfrom 0 to 10 (not 9 as i will inciment then exit the for loop) 
+			menuFunctions['P'] = [this, previousStartIndex]() {return this->listDevices(previousStartIndex); };
+		}
+
+		HomeSystemFunctions::menuDisplay<HomeSystem*>(menuDispaly, menuFunctions, this, ignore);
+	}
+	else {
+		cout << "\n --- No Devices to Dsiaply --- \n"; 
+	}
+	return true; 
+}
+
+// --- Device Creation functions --- 
 
 bool HomeSystem::createLight() {
 	// get params
