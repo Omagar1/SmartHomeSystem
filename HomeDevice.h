@@ -4,7 +4,11 @@
 
 
 using namespace std;
-
+struct Params {
+	string name;
+	bool paramsCorrect;
+	string errorMsg;
+};
 
 
 #pragma once
@@ -16,6 +20,7 @@ using namespace std;
 		virtual void quickView(); 
 		virtual void menu();
 		virtual void load(); 
+		static Params* getParams();
 	protected:
 		inline bool getOnVal();
 		inline void switchOnVal();

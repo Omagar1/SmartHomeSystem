@@ -11,11 +11,7 @@
 
 using namespace std;
 
-struct Params {
-	string name;
-	bool paramsCorrect;
-	string errorMsg; 
-};
+
 
 static class HomeSystemFunctions
 {
