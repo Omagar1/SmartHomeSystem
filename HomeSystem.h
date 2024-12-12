@@ -25,8 +25,9 @@ class HomeSystem
 		HomeDevice* findDevice(string name);
 		bool isDevice(string name);
 		bool addDevice();
-		bool selectDevice();
-		//void quickDisplayDevice(); // skippng as requires reqork of menu system
+		bool selectDevice();  // skippng as requires rework of menu system
+
+		//void quickDisplayDevice();
 		bool listDevices(int startIndex = 0);
 		/*void sortByName();
 		void sortByDevice();

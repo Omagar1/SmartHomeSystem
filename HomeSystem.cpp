@@ -99,8 +99,9 @@ bool HomeSystem::listDevices(int startIndex) {
 			if (typeInfo == typeid(Light)) {
 				device = dynamic_cast<Light*>(device);
 			}
-			// add classes as they are made 
-			menuDispaly[indexStr] = ": " + device->getName() + "\n";
+			// add classes to if as they are made 
+			
+			menuDispaly[indexStr] = ": " + device->quickViewStr() + "\n";
 			menuFunctions[indexChar] = [device]() {return device->quickAction(); };
 		}
 		// adding next page function

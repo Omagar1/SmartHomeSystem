@@ -6,7 +6,7 @@ string HomeDevice::getName() {
 }
 
 // --- quick action stuff ---
-void HomeDevice::quickView() {
+void HomeDevice::quickView() { // change
 	string output[] = {
 		this->name + ((this->on) ? "On" : "Off") + " \n",
 	};

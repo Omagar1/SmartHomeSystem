@@ -10,6 +10,7 @@ class HomeDevice
 {
 	public: 
 		/*HomeDevice(string name);*/
+		// --- getters ---
 		string getName();
 		// --- quick action stuff ---
 		virtual void quickView();

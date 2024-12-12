@@ -1,6 +1,18 @@
 #include "Light.h"
 Light::Light(string name, float brightness = 1.00f): brightness(brightness) {}
 
+void Light::quickView() {
+	//ipliment later 
+}
+string Light::quickViewStr() {
+	return "Type: " + (string)typeid(*this).name() + " Name: " + this->getName() + " Status: " + ((this->getOnVal()) ? "On" : "Off") + " Quick Action: Switch " + ((!this->getOnVal()) ? "On" : "Off") + " \n";
+}
+bool Light::quickAction() {
+	this->switchOnVal(); 
+	return true; 
+}
+
+
 LightParams* Light::getParams() {
 	LightParams* params = new LightParams();
 	params->paramsCorrect = true; 
