@@ -9,7 +9,7 @@ using namespace std;
 class HomeDevice
 {
 	public: 
-		/*HomeDevice(string name);*/
+		HomeDevice(string name);
 		// --- getters ---
 		inline string getName();
 		static Params* getParams();

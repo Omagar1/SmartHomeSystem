@@ -1,9 +1,23 @@
 #include "Schedule.h"
+Schedule::Schedule(string name) : HomeDevice(name) {
+	this->onFrom = nullptr;
+	this->onUntil = nullptr;
+}
+Schedule::~Schedule() {
+
+	if (this->onFrom != nullptr)
+		delete onFrom;
+	if(this->onUntil != nullptr)
+		delete onUntil;
+}
+
 
 void Schedule::setSchedule(time_t start, time_t end) {
-	// add error handerling? 
-	gmtime_s(this->sleepFrom, &start);
-	gmtime_s(this->sleepUntil, &end);
+	// add error handerling?
+	this->onFrom = new tm;
+	this->onUntil = new tm;
+	gmtime_s(this->onFrom, &start);
+	gmtime_s(this->onUntil, &end);
 }
 void Schedule::setSchedule(time_t end) {
 	time_t start = time(NULL);

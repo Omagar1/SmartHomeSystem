@@ -43,6 +43,7 @@ HomeDevice* HomeSystem::findDevice(string name) {
 			if ( (*it)->getName() == name) {
 				return (*it);
 			}
+			++it; 
 		}
 	}
 	return nullptr;
@@ -55,6 +56,7 @@ bool HomeSystem::isDevice(string name) {
 			if ((*it)->getName() == name) {
 				return true;
 			}
+			++it; 
 		}
 	}
 	return false;
@@ -64,7 +66,7 @@ bool HomeSystem::addDevice() {
 
 	map<string, string> display = this->typeNames;
 	// numbers in headers are so they are displayed in correct order
-	display["0intro"] = "Enter from the following numbers to create corisponding devices: \n "; // spell check
+	display["0intro"] = "Enter from the following numbers to create corisponding devices: \n"; // spell check
 	vector<string> ignore = { "0intro"};
 
 	HomeSystemFunctions::menuDisplay<HomeSystem*>(display, this->typeCreateFunctions, this,  ignore);

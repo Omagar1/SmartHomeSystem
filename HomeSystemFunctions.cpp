@@ -40,3 +40,17 @@ bool HomeSystemFunctions::storeData(string filePath, vector<string> data, string
 	}
 	
 }
+bool HomeSystemFunctions::storeData(string filePath, string str) {
+	ofstream file(filePath);
+
+	if (file.is_open()) {
+		file << "\n" << str;
+		file.close();
+		return true;
+	}
+	else {
+		cerr << "\n Error opening file: " << filePath << "\n";
+		return false;
+	}
+
+}

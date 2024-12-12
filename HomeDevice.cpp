@@ -1,5 +1,5 @@
 #include "HomeDevice.h"
-//HomeDevice::HomeDevice(string name): name(name) {}
+HomeDevice::HomeDevice(string name): name(name) {}
 
 
 
@@ -37,7 +37,32 @@ bool HomeDevice::quickAction() {
 }
 
 void HomeDevice::menu() {
-	cout << "Feature still in devlopment";
+	// numbers in headers are so they are displayed in correct order
+	map<string, string> menuDispaly = {
+		{"0header", "\n-----" + this->name + "Home Device Menu----- \n"},
+		{"0intro", "Enter From the following:\n"},
+		{"1", ": rename \n"},
+		{"2", ": Sort by name \n"},
+		{"3", ": Sort by device type (by name as secondary order) \n"},
+		{"4", "[device name] : Select device to interact with its full feature set \n"},
+		{"6", ": Rename device  \n"},
+		{"D", ": Delete \n"},
+	};
+
+
+	map<char, function<bool()>> menuFunctions;
+	/*menuFunctions['1'] = [this]() {return this->listDevices(); };
+	menuFunctions['2'] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['3'] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['4'] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['5'] = bind(&HomeSystem::addDevice, this);
+	menuFunctions['6'] = [this]() {return this->rename();  };
+	menuFunctions['['] = HomeSystemFunctions::notDevelopedYet;*/
+
+
+	vector<string> ignoreHeader = { "0header", "0intro" };
+
+	HomeSystemFunctions::menuDisplay<HomeDevice*>(menuDispaly, menuFunctions, this, ignoreHeader);
 }
 void HomeDevice::load() {
 	// get data from file

@@ -1,5 +1,5 @@
 #include "Light.h"
-Light::Light(string name, float brightness = 1.00f): brightness(brightness) {}
+Light::Light(string name, float brightness = 1.00f): Schedule(name),  brightness(brightness) {}
 
 void Light::quickView() {
 	//ipliment later 

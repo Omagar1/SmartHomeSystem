@@ -27,6 +27,7 @@ public:
 	static bool canConvertToFloat(const string& str);
 	static string timeToStr(time_t time, string format = "%Y-%m-%d %H:%M:%S"); 
 	static bool storeData(string filePath, vector<string> data, string delimiter = "," );
+	static bool storeData(string filePath, string str);
 	// make trim function
 };
 

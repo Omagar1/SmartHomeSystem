@@ -1,15 +1,8 @@
-﻿  HomeSystemFunctions.cpp
+﻿  TempHumidSensor.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
-  (compiling source file 'HomeSystemFunctions.cpp')
+  (compiling source file 'TempHumidSensor.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.cpp(7,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-  Light.cpp
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
-  (compiling source file 'Light.cpp')
-  
-  main.cpp
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
-  (compiling source file 'main.cpp')
-  
-  Generating Code...
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\TempHumidSensor.cpp(9,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\TempHumidSensor.cpp(10,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   HomeSmartSystem.vcxproj -> C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\x64\Debug\HomeSmartSystem.exe

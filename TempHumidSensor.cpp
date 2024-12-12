@@ -1,8 +1,10 @@
 #include "TempHumidSensor.h"
-TempHumidSensor::TempHumidSensor(string Name) {
+TempHumidSensor::TempHumidSensor(string Name): HomeDevice(Name) {
 	// set file paths - if i get a chance i wil create a strandard file path that can be chanaged
-	this->humidDataFilePath = "C:/Users/josia/Documents/UNI Stuff/CS/24 25/Advanced Programing/SmartHomeSystem/RuntimeFiles/" + this->getName() + "/humidData";
-	this->tempDataFilePath = "C:/Users/josia/Documents/UNI Stuff/CS/24 25/Advanced Programing/SmartHomeSystem/RuntimeFiles/" + this->getName() + "/tempData";
+	
+
+	this->humidDataFilePath = "C:/Users/josia/Documents/UNI Stuff/CS/24 25/Advanced Programing/SmartHomeSystem/RuntimeFiles/"+ this->getName() +"HumidData";
+	this->tempDataFilePath = "C:/Users/josia/Documents/UNI Stuff/CS/24 25/Advanced Programing/SmartHomeSystem/RuntimeFiles/"+ this->getName() +"TempData";
 	// --- genarate last data ---
 	this->lastHumidReading = (rand() % 100) / 100;
 	this->lastTempReading = rand() % 30; 
@@ -21,8 +23,8 @@ TempHumidSensor::TempHumidSensor(string Name) {
 
 
 void TempHumidSensor::setCurrentHumidReading() {
-	if (rand() % 2 == 0) { this->lastTempReading += rand() % 5; }
-	else { this->lastTempReading -= rand() % 5; }
+	if (rand() % 2 == 0) { this->lastHumidReading += rand() % 5; }
+	else { this->lastHumidReading -= rand() % 5; }
 	// store in historic temp
 
 }
