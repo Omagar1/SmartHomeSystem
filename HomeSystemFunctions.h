@@ -22,6 +22,8 @@ public:
 	template<typename Class> 
 	static void menuDisplay(const map<string, string> dispaly, const map<char, function<bool()>> functions, const Class object, const vector<string> dontDisplay = vector<string>());
 	static bool canConvertToFloat(const string& str);
+
+	// make trim function
 };
 
 template <size_t N> // iterator workaround found from https://stackoverflow.com/questions/28653967/range-based-for-loop-throws-a-compiler-error-with-array-parameter

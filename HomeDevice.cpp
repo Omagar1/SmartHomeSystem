@@ -1,32 +1,7 @@
 #include "HomeDevice.h"
 //HomeDevice::HomeDevice(string name): name(name) {}
 
-string HomeDevice::getName() {
-	return this->name; 
-}
 
-// --- quick action stuff ---
-void HomeDevice::quickView() { // change
-	string output[] = {
-		this->name + ((this->on) ? "On" : "Off") + " \n",
-	};
-	HomeSystemFunctions::displayOptions(output); 
-}
-string  HomeDevice::quickViewStr() {
-	return "Type: "+ (string)typeid(*this).name() + " Name: " + this->name + " Status: " + ((this->on) ? "On" : "Off") + " Quick Action: Switch " + ((!this->on) ? "On" : "Off") + " \n";
-}
-
-bool HomeDevice::quickAction() {
-	this->switchOnVal(); 
-	return true; 
-}
-
-void HomeDevice::menu() {
-	cout << "Feature still in devlopment";
-}
-void HomeDevice::load() {
-	// get data from file
-}
 
 Params* HomeDevice::getParams() {
 	Params* params = new Params();
@@ -43,5 +18,33 @@ Params* HomeDevice::getParams() {
 	}
 	return params;
 }
+
+// --- quick action stuff ---
+void HomeDevice::quickView() { // change
+	string output[] = {
+		this->name + ((this->on) ? "On" : "Off") + " \n",
+	};
+	HomeSystemFunctions::displayOptions(output); 
+}
+string  HomeDevice::quickViewStr() {
+	return "Type: "+ (string)typeid(*this).name() + " Name: " + this->name + " Status: " + ((this->on) ? "On" : "Off") + " Quick Action: Switch " + ((!this->on) ? "On" : "Off") + " \n";
+}
+
+// --- rest of functions --- 
+bool HomeDevice::quickAction() {
+	this->switchOnVal(); 
+	return true; 
+}
+
+void HomeDevice::menu() {
+	cout << "Feature still in devlopment";
+}
+void HomeDevice::load() {
+	// get data from file
+}
+
+
+
+
 
 

@@ -11,15 +11,19 @@ class HomeDevice
 	public: 
 		/*HomeDevice(string name);*/
 		// --- getters ---
-		string getName();
+		inline string getName();
+		static Params* getParams();
+		// --- setters ---
+		inline void setName(string newName);
 		// --- quick action stuff ---
 		virtual void quickView();
 		virtual string quickViewStr();
 		virtual bool quickAction(); 
 		// --- rest of functions --- 
 		virtual void menu();
-		virtual void load(); 
-		static Params* getParams();
+		virtual void load();
+		
+
 	protected:
 		inline bool getOnVal();
 		inline void switchOnVal();
@@ -30,7 +34,10 @@ class HomeDevice
 		
 		
 };
+string HomeDevice::getName() { return this->name; }
+void HomeDevice::setName(string newName) { this->name = newName; }
 
- bool HomeDevice::getOnVal() {return this->on;}
- void HomeDevice::switchOnVal() { this->on = !this->on;  }
- void HomeDevice::setOnVal(bool val) { this->on = val; }
+bool HomeDevice::getOnVal() {return this->on;}
+void HomeDevice::switchOnVal() { this->on = !this->on;  }
+void HomeDevice::setOnVal(bool val) { this->on = val; }
+ 

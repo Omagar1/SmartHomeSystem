@@ -1,8 +1,33 @@
-﻿  HomeSystem.cpp
+﻿  HomeDevice.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(14,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'HomeDevice.cpp')
+  
+  HomeSystem.cpp
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(14,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
   (compiling source file 'HomeSystem.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(79,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(81,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  HomeSystemFunctions.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(14,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'HomeSystemFunctions.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.cpp(7,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  Light.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(14,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'Light.cpp')
+  
+  Schedule.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(14,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'Schedule.cpp')
+  
+  SleepDevice.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(14,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'SleepDevice.cpp')
+  
+  TempHumidSensor.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(14,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'TempHumidSensor.cpp')
+  
   main.cpp
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(14,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
   (compiling source file 'main.cpp')

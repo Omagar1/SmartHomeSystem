@@ -33,6 +33,10 @@ class HomeSystem
 		void sortByDevice();
 		bool SaveOnExit();
 		bool Load(); */
+
+		bool rename(HomeDevice* device);
+		bool rename(); // for homeSystem
+
 		// --- Device Creation functions --- 
 		bool createLight(); 
 
@@ -43,4 +47,7 @@ class HomeSystem
 		const map<string, string> typeNames = { { "1", ": Light\n" } };
 		const map<char, function<bool()>> typeCreateFunctions = { { '1' , [this]() {return this->createLight(); } } };
 }; 
+
+
+
 

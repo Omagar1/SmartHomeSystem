@@ -2,13 +2,13 @@
 #include <string>
 #include "Params.h"
 #include "HomeSystemFunctions.h"
-#include "HomeDevice.h"
+#include "Schedule.h"
 
 struct LightParams : Params {
 	float brightness; 
 };
 
-class Light : public HomeDevice
+class Light : public Schedule
 {
 public: 
 	Light(string name, float brightness);
@@ -16,6 +16,7 @@ public:
 	void quickView() override;
 	string quickViewStr() override;
 	bool quickAction() override;
+	//
 	static LightParams* getParams();
 
 private:
