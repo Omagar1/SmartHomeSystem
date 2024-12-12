@@ -3,7 +3,9 @@
 #include<vector>
 #include<map>
 #include "HomeDevice.h"
+#include "Params.h"
 #include "Light.h"
+#include "TempHumidSensor.h"
 #include "HomeSystemFunctions.h"
 
 
@@ -37,15 +39,17 @@ class HomeSystem
 		bool rename(HomeDevice* device);
 		bool rename(); // for homeSystem
 
-		// --- Device Creation functions --- 
+		// --- Device Creation functions ---
+		/*bool standardCheckParams(Params* params); */
 		bool createLight(); 
+		bool createTempHumidSensor(); 
 
 	private:
 		string name;
 		vector<HomeDevice*>* devices;
 
-		const map<string, string> typeNames = { { "1", ": Light\n" } };
-		const map<char, function<bool()>> typeCreateFunctions = { { '1' , [this]() {return this->createLight(); } } };
+		const map<string, string> typeNames = { { "1", ": Light\n" } , { "2", ": Temperature and Humidity Sensor\n" } };
+		const map<char, function<bool()>> typeCreateFunctions = { { '1' , [this]() {return this->createLight(); } },{ '2' , [this]() {return this->createTempHumidSensor(); } } };
 }; 
 
 

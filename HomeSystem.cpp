@@ -166,13 +166,14 @@ bool HomeSystem::rename() { // for home system
 	}
 	else {
 		this->name = input;
-		cout << "\n Name Set \n";
+		cout << "\n Name Set Reset To see name change \n";
 		return true;
 	}
 }
 
 
 // --- Device Creation functions --- 
+
 
 bool HomeSystem::createLight() {
 	// get params
@@ -186,7 +187,7 @@ bool HomeSystem::createLight() {
 		params = Light::getParams();
 		if (this->isDevice(params->name)) {
 			params->paramsCorrect = false;
-			params->errorMsg = "Name already exist please chose a diffrent name \n"; 
+			params->errorMsg = "\n ### Name Already Taken ####  \n"; 
 		}
 	} while (!params->paramsCorrect);
 
@@ -196,10 +197,39 @@ bool HomeSystem::createLight() {
 	// Add object to devices vector 
 	this->devices->push_back(newLight); 
 	
-	cout << "Device " << params->name << " has been added \n"; 
+	cout << "Light " << params->name << " has been added \n"; 
 	// cleaning up memory
 	delete(params); 
 
-	return false; // as after creation we want to return to main menue 
+	return false; // as after creation we want to return to main menu 
+	
+}
+bool HomeSystem::createTempHumidSensor() {
+	// get params
+	Params* params = nullptr;
+	do {
+		if (params != nullptr) { 
+			cout << "\n ### Invalid Input ### \n ";  
+			cout << params->errorMsg<< "\n";
+		}
+
+		params = TempHumidSensor::getParams();
+		if (this->isDevice(params->name)) {
+			params->paramsCorrect = false;
+			params->errorMsg = "\n ### Name Already Taken ####  \n"; 
+		}
+	} while (!params->paramsCorrect);
+
+	// Create new TempHumidSensor object 
+	TempHumidSensor* newTempHumidSensor = new TempHumidSensor(params->name);
+
+	// Add object to devices vector 
+	this->devices->push_back(newTempHumidSensor);
+	
+	cout << "Temperature and Humidity Sensor:  " << params->name << " has been added \n"; 
+	// cleaning up memory
+	delete(params); 
+
+	return false; // as after creation we want to return to main menu 
 	
 }

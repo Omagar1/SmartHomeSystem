@@ -4,7 +4,10 @@
 #include <vector>
 #include <functional>
 #include<iostream>
+#include <fstream>
 #include<string>
+#include <ctime>
+#include <time.h>
 
 
 using namespace std;
@@ -22,7 +25,8 @@ public:
 	template<typename Class> 
 	static void menuDisplay(const map<string, string> dispaly, const map<char, function<bool()>> functions, const Class object, const vector<string> dontDisplay = vector<string>());
 	static bool canConvertToFloat(const string& str);
-
+	static string timeToStr(time_t time, string format = "%Y-%m-%d %H:%M:%S"); 
+	static bool storeData(string filePath, vector<string> data, string delimiter = "," );
 	// make trim function
 };
 
