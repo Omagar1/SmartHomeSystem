@@ -1,5 +1,6 @@
 #include "HomeDevice.h"
-HomeDevice::HomeDevice(string name): name(name) {}
+#include "HomeSystem.h"
+HomeDevice::HomeDevice(string name, HomeSystem* homeSystem): name(name),  homeSystem(homeSystem) {}
 
 
 
@@ -22,12 +23,12 @@ Params* HomeDevice::getParams() {
 // --- quick action stuff ---
 void HomeDevice::quickView() { // change
 	string output[] = {
-		this->name + ((this->on) ? "On" : "Off") + " \n",
+		this->name + getOnValStr()+ " \n",
 	};
 	HomeSystemFunctions::displayOptions(output); 
 }
 string  HomeDevice::quickViewStr() {
-	return "Type: "+ (string)typeid(*this).name() + " Name: " + this->name + " Status: " + ((this->on) ? "On" : "Off") + " Quick Action: Switch " + ((!this->on) ? "On" : "Off") + " \n";
+	return "Type: "+ (string)typeid(*this).name() + " Name: " + this->name + " Status: " + getOnValStr()+ " Quick Action: Switch " + getOpositeOnValStr() + " \n";
 }
 
 // --- rest of functions --- 
@@ -39,33 +40,52 @@ bool HomeDevice::quickAction() {
 void HomeDevice::menu() {
 	// numbers in headers are so they are displayed in correct order
 	map<string, string> menuDispaly = {
-		{"0header", "\n-----" + this->name + "Home Device Menu----- \n"},
+		{"0header", "\n-----" + this->name + " Home Device Menu----- \n"}, /// then this 
+		{"0Status", "Status: "+ getOnValStr() + " \n"}, // this displays first - need to fix 
 		{"0intro", "Enter From the following:\n"},
-		{"1", ": rename \n"},
-		{"2", ": Sort by name \n"},
-		{"3", ": Sort by device type (by name as secondary order) \n"},
-		{"4", "[device name] : Select device to interact with its full feature set \n"},
-		{"6", ": Rename device  \n"},
+		{"1", ": Toggle Light Switch\n"},
+		{"2", ": Rename device  \n"},
 		{"D", ": Delete \n"},
 	};
 
 
 	map<char, function<bool()>> menuFunctions;
-	/*menuFunctions['1'] = [this]() {return this->listDevices(); };
-	menuFunctions['2'] = HomeSystemFunctions::notDevelopedYet;
-	menuFunctions['3'] = HomeSystemFunctions::notDevelopedYet;
-	menuFunctions['4'] = HomeSystemFunctions::notDevelopedYet;
-	menuFunctions['5'] = bind(&HomeSystem::addDevice, this);
-	menuFunctions['6'] = [this]() {return this->rename();  };
-	menuFunctions['['] = HomeSystemFunctions::notDevelopedYet;*/
-
-
-	vector<string> ignoreHeader = { "0header", "0intro" };
+	menuFunctions['1'] = [this]() {cout << "\n Switching " << this->getOpositeOnValStr()<<"\n"; this->switchOnVal(); return true;   };
+	menuFunctions['2'] = [this]() {return this->rename(this->homeSystem); };
+	menuFunctions['D'] = HomeSystemFunctions::notDevelopedYet;
+	
+	vector<string> ignoreHeader = { "0header", "0intro" , "0Status" };
 
 	HomeSystemFunctions::menuDisplay<HomeDevice*>(menuDispaly, menuFunctions, this, ignoreHeader);
 }
+
 void HomeDevice::load() {
 	// get data from file
+}
+
+bool HomeDevice::rename(HomeSystem* homeSystem) { // for device 
+	string input;
+	cout << "Rename " + this->name + " \n";
+	cout << "Enter new name or  Q to cancel \n";
+	cout << "Input: ";
+	cin >> input;
+	input = HomeSystemFunctions::trim(input);
+	if (input == "Q") {
+		return true; // the return val is to do with the exiting the menue system that this function might be called in not the result of the function
+	}
+	else if (input == "") {
+		cout << "\n ### Name Cannot Be Blank! #### \n ";
+		return rename(homeSystem);
+	}
+	else if (homeSystem->isDevice(input)) {
+		cout << "\n ### Name Already Taken #### \n ";
+		return rename(homeSystem);
+	}
+	else {
+		this->name = input;
+		cout << "\n Name Set \n";
+		return true;
+	}
 }
 
 

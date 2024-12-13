@@ -15,7 +15,7 @@ void HomeSystem::menu() {
 		{"1", ": List devices \n"},
 		{"2", ": Sort by name \n"},
 		{"3", ": Sort by device type (by name as secondary order) \n"},
-		{"4", "[device name] : Select device to interact with its full feature set \n"},
+		{"4", ": Select device to interact with its full feature set \n"},
 		{"5", ": Add device \n"},
 		{"6", ": Rename Home System \n"},
 	};
@@ -25,7 +25,7 @@ void HomeSystem::menu() {
 	menuFunctions['1'] = [this]() {return this->listDevices(); };
 	menuFunctions['2'] = HomeSystemFunctions::notDevelopedYet;
 	menuFunctions['3'] = HomeSystemFunctions::notDevelopedYet;
-	menuFunctions['4'] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['4'] = [this]() {return this->selectDevice(); };
 	menuFunctions['5'] = bind(&HomeSystem::addDevice, this);
 	menuFunctions['6'] = [this]() {return this->rename();  };
 	menuFunctions['['] = HomeSystemFunctions::notDevelopedYet; 
@@ -74,8 +74,26 @@ bool HomeSystem::addDevice() {
 	return true; 
 }
 bool HomeSystem::selectDevice() {
-	// skippng as requires rework of menu system
-	return true; 
+	int devicesLength = this->devices->size();
+	if (devicesLength != 0) {
+		// get name of device they want to interact with 
+		string input;
+		cout << "\nDeveice Name: ";
+		cin >> input;
+		// validation
+		input = HomeSystemFunctions::trim(input);
+
+		// find device
+		HomeDevice* device = findDevice(input);
+		if (device == nullptr) {
+			cout << "\n### Device with name" << input << " not found! ###\n";
+		}
+		else {
+			// dipslay device menu 
+			device->menu();
+		}
+	}
+	return true; // this is about if to exit the menu system not the outcome of the function
 }
 
 
@@ -128,30 +146,6 @@ bool HomeSystem::listDevices(int startIndex) {
 	return true; 
 }
 
-bool HomeSystem::rename(HomeDevice* device) { // for device 
-	string input;
-	cout << "Rename " + device->getName() + " \n";
-	cout << "Enter new name or  Q to cancel \n";
-	cout << "Input: ";
-	cin >> input;
-	if (input == "Q") {
-		return true; // the return val is to do with the exiting the menue system that this function might be called in not the result of the function
-	}
-	else if (input == "") {
-		cout << "\n ### Name Cannot Be Blank! #### \n ";
-		return rename();
-	}
-	else if (this->isDevice(input)) {
-		cout << "\n ### Name Already Taken #### \n ";
-		return rename();
-	}
-	else {
-		device->setName(input); 
-		cout << "\n Name Set \n"; 
-		return true; 
-	}
-}
-
 
 bool HomeSystem::rename() { // for home system
 	string input;
@@ -159,6 +153,7 @@ bool HomeSystem::rename() { // for home system
 	cout << "Enter new name or  Q to cancel \n";
 	cout << "Input: ";
 	cin >> input;
+	input = HomeSystemFunctions::trim(input);
 	if (input == "Q") {
 		return true; // the return val is to do with the exiting the menue system that this function might be called in not the result of the function
 	}
@@ -194,7 +189,7 @@ bool HomeSystem::createLight() {
 	} while (!params->paramsCorrect);
 
 	// Create new light object 
-	Light* newLight = new Light(params->name, params->brightness);
+	Light* newLight = new Light(params->name, this, params->brightness);
 
 	// Add object to devices vector 
 	this->devices->push_back(newLight); 
@@ -223,7 +218,7 @@ bool HomeSystem::createTempHumidSensor() {
 	} while (!params->paramsCorrect);
 
 	// Create new TempHumidSensor object 
-	TempHumidSensor* newTempHumidSensor = new TempHumidSensor(params->name);
+	TempHumidSensor* newTempHumidSensor = new TempHumidSensor(params->name, this);
 
 	// Add object to devices vector 
 	this->devices->push_back(newTempHumidSensor);

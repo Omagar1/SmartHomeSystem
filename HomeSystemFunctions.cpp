@@ -23,6 +23,8 @@ string HomeSystemFunctions::timeToStr(time_t time, string format) {
 	return str;
 }
 
+
+
 bool HomeSystemFunctions::storeData(string filePath, vector<string> data, string delimiter ) {
 	ofstream file(filePath);
 
@@ -40,6 +42,7 @@ bool HomeSystemFunctions::storeData(string filePath, vector<string> data, string
 	}
 	
 }
+
 bool HomeSystemFunctions::storeData(string filePath, string str) {
 	ofstream file(filePath);
 
@@ -52,5 +55,28 @@ bool HomeSystemFunctions::storeData(string filePath, string str) {
 		cerr << "\n Error opening file: " << filePath << "\n";
 		return false;
 	}
-
 }
+
+string HomeSystemFunctions::trim(string str) {
+	// find first non whitespace
+	if (str != "") {
+		string::iterator startIt = str.begin();
+		string::iterator endIt = str.end() - 1;
+		while (startIt != endIt && isspace(*startIt)) {
+			startIt++;
+		}
+		// find last
+		while (endIt != startIt && isspace(*endIt)) {
+			endIt--;
+		}
+		return string(startIt, endIt + 1);
+	}
+	else {
+		return str; 
+	}
+	
+	 
+}
+
+
+

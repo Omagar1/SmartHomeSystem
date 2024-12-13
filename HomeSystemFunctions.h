@@ -28,7 +28,8 @@ public:
 	static string timeToStr(time_t time, string format = "%Y-%m-%d %H:%M:%S"); 
 	static bool storeData(string filePath, vector<string> data, string delimiter = "," );
 	static bool storeData(string filePath, string str);
-	// make trim function
+	static string trim(string str); // removes whitespace from start and end of string
+	
 };
 
 template <size_t N> // iterator workaround found from https://stackoverflow.com/questions/28653967/range-based-for-loop-throws-a-compiler-error-with-array-parameter

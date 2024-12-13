@@ -11,7 +11,7 @@ struct LightParams : Params {
 class Light : public Schedule
 {
 public: 
-	Light(string name, float brightness);
+	Light(string name, HomeSystem* homeSystem, float brightness);
 	// --- quick action stuff ---
 	void quickView() override;
 	string quickViewStr() override;

@@ -23,7 +23,8 @@ int main() {
 
 
 	// --- tests --
-
+	/*string testStr = ""; 
+	cout << HomeSystemFunctions::trim(testStr); */
 
 	//string testData1[] = { "\n-----Test 1: Home Smart System Menu----- \n", 
 	//	"Enter From the following:\n", 

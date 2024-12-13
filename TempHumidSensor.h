@@ -10,7 +10,7 @@
 class TempHumidSensor : public HomeDevice
 {
 public:
-	TempHumidSensor(string Name);
+	TempHumidSensor(string Name, HomeSystem* homeSystem);
 	// --- getters ---
 	inline string getLastHumidReading(); 
 	inline string getLastTempReading();

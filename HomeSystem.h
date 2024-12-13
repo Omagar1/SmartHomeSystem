@@ -28,7 +28,7 @@ class HomeSystem
 		HomeDevice* findDevice(string name);
 		bool isDevice(string name);
 		bool addDevice();
-		bool selectDevice();  // skippng as requires rework of menu system
+		bool selectDevice();
 
 		//void quickDisplayDevice();
 		bool listDevices(int startIndex = 0);
@@ -37,7 +37,7 @@ class HomeSystem
 		bool SaveOnExit();
 		bool Load(); */
 
-		bool rename(HomeDevice* device);
+		
 		bool rename(); // for homeSystem
 
 		// --- Device Creation functions ---

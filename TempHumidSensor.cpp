@@ -1,5 +1,5 @@
 #include "TempHumidSensor.h"
-TempHumidSensor::TempHumidSensor(string Name): HomeDevice(Name) {
+TempHumidSensor::TempHumidSensor(string Name, HomeSystem* homeSystem): HomeDevice(Name, homeSystem) {
 	// set file paths - if i get a chance i wil create a strandard file path that can be chanaged
 	
 

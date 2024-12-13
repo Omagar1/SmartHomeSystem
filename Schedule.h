@@ -3,7 +3,7 @@
 class Schedule : public HomeDevice
 {
 public: // virtual class hence no quick actions
-	Schedule(string name); 
+	Schedule(string name, HomeSystem* homeSystem);
 	~Schedule();
 	// --- sleep Functions ---
 	void setSchedule(time_t start, time_t  end); // change to in 30mine ect
