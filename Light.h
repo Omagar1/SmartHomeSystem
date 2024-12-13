@@ -13,8 +13,7 @@ class Light : public Schedule
 public: 
 	Light(string name, HomeSystem* homeSystem, float brightness);
 	// --- quick action stuff ---
-	void quickView() override;
-	string quickViewStr() override;
+	inline string quickViewStr(string delimiter = " ") override;
 	bool quickAction() override;
 	//
 	static LightParams* getParams();
@@ -23,3 +22,6 @@ private:
 	float brightness; // percentage stored as value between 0 and 1.00
 };
 
+string Light::quickViewStr(string delimiter) {
+	return "Type: " + (string)typeid(*this).name() + delimiter + "Name: " + this->getName() + delimiter + "Status: " + this->getOnValStr() + delimiter + "Brightness: "+ to_string(this->brightness*100)+"%" + delimiter + "Quick Action: Switch " + this->getOpositeOnValStr() + " \n";
+}

@@ -109,7 +109,9 @@ bool HomeSystem::listDevices(int startIndex) {
 
 		// numbers in headers are so they are displayed in correct order
 		menuDispaly["0intro"] = "Select from the following to do that device's Quick Action: \n";
-		menuDispaly["0Page"] = "Page " + to_string(devicesLength % (startIndex + 1)+1) + " of " + to_string(devicesLength % 10) + " \n";
+		if (devicesLength % 10 > 1) {
+			menuDispaly["0Page"] = "Page " + to_string(devicesLength % (startIndex + 1) + 1) + " of " + to_string(devicesLength % 10) + " \n";
+		}
 		int i;
 		for (i = startIndex; i < devicesLength && i < (startIndex + 10); i++) {
 			string indexStr = to_string(i + 1 - startIndex); // +1 so it's 1 to 9 and not 0 to 8; - startIndex so its consitently 1 to 9 and not 9 - 17 ect for diffent startIndex other than 0
@@ -132,8 +134,8 @@ bool HomeSystem::listDevices(int startIndex) {
 			menuFunctions['N'] = [this, i]() {return this->listDevices(i); }; // using i here as i will inciment then exit the for loop so will be thge next index for display
 		}
 		// adding previous page function
-		else if (i != 10) {
-			menuDispaly["P"] = ": Previous Page \n";
+		else if (i > 9) {
+			menuDispaly["P"] = ": Previous Page \n" ;
 			int previousStartIndex = i - 10; // as im goingfrom 0 to 10 (not 9 as i will inciment then exit the for loop) 
 			menuFunctions['P'] = [this, previousStartIndex]() {return this->listDevices(previousStartIndex); };
 		}

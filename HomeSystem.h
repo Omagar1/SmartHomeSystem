@@ -33,9 +33,9 @@ class HomeSystem
 		//void quickDisplayDevice();
 		bool listDevices(int startIndex = 0);
 		/*void sortByName();
-		void sortByDevice();
+		void sortByDevice();*/
 		bool SaveOnExit();
-		bool Load(); */
+		bool Load(); 
 
 		
 		bool rename(); // for homeSystem

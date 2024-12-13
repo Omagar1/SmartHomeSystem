@@ -12,29 +12,36 @@ class TempHumidSensor : public HomeDevice
 public:
 	TempHumidSensor(string Name, HomeSystem* homeSystem);
 	// --- getters ---
-	inline string getLastHumidReading(); 
-	inline string getLastTempReading();
+	inline string getLastHumidReadingStr(); 
+	inline string getLastTempReadingStr();
+	inline string getTypeStr() override;
 	// --- quick action stuff ---
-	/*void quickView() override;
-	string quickViewStr() override;
-	bool quickAction() override;*/
+	inline string quickViewStr(string delimiter = " ") override;
+	bool quickAction() override;
 	// --- Sensor Stuff --- 
-	/*bool displayCurrentData();
-	bool displayHistoricData(); */
-	void setCurrentHumidReading();
-	void setCurrentTempReading();
-	
+	bool displayCurrentData();
+	bool displayHistoricData(); 
+	void setCurrentReading();
+	// --- other funtcion Stuff --- 
+	virtual void menu() override;
+
 
 private:
-	string humidDataFilePath;
-	string tempDataFilePath;
+	string FilePath;
 	float lastHumidReading; // num between 0 and 1 to represent %
 	float lastTempReading; // in Celcius
 };
 
-string TempHumidSensor::getLastHumidReading() {
+
+string TempHumidSensor::getLastHumidReadingStr() {
 	return to_string(this->lastHumidReading * 100) + "%"; 
 }
-string TempHumidSensor::getLastTempReading() {
+string TempHumidSensor::getLastTempReadingStr() {
 	return to_string(this->lastTempReading ) + "C";
+}
+string TempHumidSensor::getTypeStr() {
+	return "Temperature and Humidity Sensor";
+}
+string TempHumidSensor::quickViewStr(string delimiter) {
+	return "Type: " + this->getTypeStr() + delimiter +"Name: " + this->getName() + delimiter + "Humidity: "+ this->getLastHumidReadingStr() + delimiter + "tempriture: " + this->getLastTempReadingStr() + " \n";
 }

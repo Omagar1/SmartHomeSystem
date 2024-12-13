@@ -26,7 +26,7 @@ string HomeSystemFunctions::timeToStr(time_t time, string format) {
 
 
 bool HomeSystemFunctions::storeData(string filePath, vector<string> data, string delimiter ) {
-	ofstream file(filePath);
+	ofstream file(filePath, ios::app);
 
 	if (file.is_open()) {
 		file << "\n"; 
@@ -44,7 +44,7 @@ bool HomeSystemFunctions::storeData(string filePath, vector<string> data, string
 }
 
 bool HomeSystemFunctions::storeData(string filePath, string str) {
-	ofstream file(filePath);
+	ofstream file(filePath, ios::app);
 
 	if (file.is_open()) {
 		file << "\n" << str;
@@ -54,6 +54,23 @@ bool HomeSystemFunctions::storeData(string filePath, string str) {
 	else {
 		cerr << "\n Error opening file: " << filePath << "\n";
 		return false;
+	}
+}
+
+vector<string> HomeSystemFunctions::loadData(string filePath) {
+	ifstream file(filePath);
+
+	if (file.is_open()) {
+		vector<string>output = vector<string>();
+		string line;
+		while (getline(file, line)) {
+			output.push_back(line); 
+		}
+		return output; 
+	}
+	else {
+		cerr << "\n Error opening file: " << filePath << "\n";
+		return vector<string>();
 	}
 }
 

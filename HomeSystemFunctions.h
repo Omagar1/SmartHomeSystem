@@ -26,8 +26,11 @@ public:
 	static void menuDisplay(const map<string, string> dispaly, const map<char, function<bool()>> functions, const Class object, const vector<string> dontDisplay = vector<string>());
 	static bool canConvertToFloat(const string& str);
 	static string timeToStr(time_t time, string format = "%Y-%m-%d %H:%M:%S"); 
+	// --- file stuff ---
 	static bool storeData(string filePath, vector<string> data, string delimiter = "," );
 	static bool storeData(string filePath, string str);
+	static vector<string> loadData(string filePath);
+	// --- helpful stuff --- 
 	static string trim(string str); // removes whitespace from start and end of string
 	
 };

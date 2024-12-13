@@ -21,14 +21,8 @@ Params* HomeDevice::getParams() {
 }
 
 // --- quick action stuff ---
-void HomeDevice::quickView() { // change
-	string output[] = {
-		this->name + getOnValStr()+ " \n",
-	};
-	HomeSystemFunctions::displayOptions(output); 
-}
-string  HomeDevice::quickViewStr() {
-	return "Type: "+ (string)typeid(*this).name() + " Name: " + this->name + " Status: " + getOnValStr()+ " Quick Action: Switch " + getOpositeOnValStr() + " \n";
+void HomeDevice::quickView() { 
+	cout << this->quickViewStr(); 
 }
 
 // --- rest of functions --- 
@@ -43,8 +37,8 @@ void HomeDevice::menu() {
 		{"0header", "\n-----" + this->name + " Home Device Menu----- \n"}, /// then this 
 		{"0Status", "Status: "+ getOnValStr() + " \n"}, // this displays first - need to fix 
 		{"0intro", "Enter From the following:\n"},
-		{"1", ": Toggle Light Switch\n"},
-		{"2", ": Rename device  \n"},
+		{"1", ": Toggle On Switch\n"},
+		{"2", ": Rename Device  \n"},
 		{"D", ": Delete \n"},
 	};
 

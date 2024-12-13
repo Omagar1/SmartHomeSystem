@@ -1,12 +1,6 @@
 #include "Light.h"
 Light::Light(string name, HomeSystem* homeSystem, float brightness = 1.00f): Schedule(name, homeSystem),  brightness(brightness) {}
 
-void Light::quickView() {
-	//ipliment later 
-}
-string Light::quickViewStr() {
-	return "Type: " + (string)typeid(*this).name() + " Name: " + this->getName() + " Status: " + ((this->getOnVal()) ? "On" : "Off") + " Quick Action: Switch " + ((!this->getOnVal()) ? "On" : "Off") + " \n";
-}
 bool Light::quickAction() {
 	this->switchOnVal(); 
 	return true; 

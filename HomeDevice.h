@@ -15,11 +15,13 @@ class HomeDevice
 		// --- getters ---
 		inline string getName();
 		static Params* getParams();
+		inline HomeSystem* getHomeSystem();
+		inline virtual string getTypeStr();
 		// --- setters ---
 		inline void setName(string newName);
 		// --- quick action stuff ---
 		virtual void quickView();
-		virtual string quickViewStr();
+		inline virtual string quickViewStr(string delimiter = " ");
 		virtual bool quickAction(); 
 		// --- rest of functions --- 
 		virtual void menu();
@@ -41,7 +43,18 @@ class HomeDevice
 		
 };
 string HomeDevice::getName() { return this->name; }
+HomeSystem* HomeDevice::getHomeSystem() { return this->homeSystem; }
+string HomeDevice::getTypeStr() { 
+	string type = (string)typeid(*this).name();
+	type.erase(type.begin(), type.begin() + 6); // removing "class"
+	return type;
+}
 void HomeDevice::setName(string newName) { this->name = newName; }
+
+string HomeDevice::quickViewStr(string delimiter) {
+	return "Type: " + getTypeStr() + delimiter + "Name: " + this->name + delimiter + "Status:" + getOnValStr() + delimiter +" Quick Action: Switch " + getOpositeOnValStr() + " \n";
+}
+
 
 bool HomeDevice::getOnVal() {return this->on;}
 string HomeDevice::getOnValStr() { return ((this->on) ? "On" : "Off");  }
