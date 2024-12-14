@@ -106,10 +106,22 @@ string HomeSystemFunctions::trim(string str) {
  
 }
 
-vector<string> HomeSystemFunctions::slit(string str, string delimiter) {
-	vector<string> vector;
-
-	return vector;
+vector<string> HomeSystemFunctions::split(string str, char delimiter) {
+	vector<string> splitStr;
+	str += delimiter; // so last item is counted without having to add any exta logic
+	string::iterator startSubStrIt = str.begin();
+	string::iterator endSubStrIt = str.begin();
+	while (endSubStrIt != str.end()) {
+		if (*endSubStrIt == delimiter) {
+			splitStr.push_back(string(startSubStrIt, endSubStrIt));
+			startSubStrIt = ++endSubStrIt; //jumping over the delimiter char in the string
+		}
+		else if (endSubStrIt != str.end()) {
+			endSubStrIt++; // so it dosent overflow
+		}
+		
+	}
+	return splitStr;
 }
 
 

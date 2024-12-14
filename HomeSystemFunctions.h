@@ -32,7 +32,7 @@ public:
 	static vector<string> loadData(string filePath);
 	// --- helpful stuff --- 
 	static string trim(string str); // removes whitespace from start and end of string
-	static vector<string> slit(string str, string delimiter = ","); 
+	static vector<string> split(string str, char delimiter = ','); 
 	
 };
 
