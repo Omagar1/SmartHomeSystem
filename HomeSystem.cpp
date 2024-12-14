@@ -3,7 +3,11 @@
 #include <functional>
 #include "HomeSystem.h"
 
-HomeSystem::HomeSystem(string name, string filePath,  vector<HomeDevice*>* devices) : name(name), filePath(filePath+"/"+name+"HSS"), devices(devices) {}
+HomeSystem::HomeSystem(string name, string filePath,  vector<shared_ptr<HomeDevice>>* devices) : name(name), filePath(filePath+"/"+name+"HSS"), devices(devices) {}
+
+HomeSystem::~HomeSystem() {
+
+}
 
 void HomeSystem::menu() {
 
@@ -37,9 +41,9 @@ void HomeSystem::menu() {
 	HomeSystemFunctions::menuDisplay<HomeSystem*>(menuDispaly, menuFunctions, this, ignoreHeader);
 }
 
-HomeDevice* HomeSystem::findDevice(string name) {
+shared_ptr<HomeDevice> HomeSystem::findDevice(string name) {
 	if (this->devices != nullptr) {
-		vector<HomeDevice*>::iterator it(this->devices[0].begin());
+		vector<shared_ptr<HomeDevice>>::iterator it(this->devices[0].begin());
 		while (it != this->devices[0].end()) {
 			if ( (*it)->getName() == name) {
 				return (*it);
@@ -52,7 +56,7 @@ HomeDevice* HomeSystem::findDevice(string name) {
 
 bool HomeSystem::isDevice(string name) {
 	if (this->devices != nullptr) {
-		vector<HomeDevice*>::iterator it(this->devices[0].begin());
+		vector<shared_ptr<HomeDevice>>::iterator it(this->devices[0].begin());
 		while (it != this->devices[0].end()) {
 			if ((*it)->getName() == name) {
 				return true;
@@ -85,7 +89,7 @@ bool HomeSystem::selectDevice() {
 		input = HomeSystemFunctions::trim(input);
 
 		// find device
-		HomeDevice* device = findDevice(input);
+		shared_ptr<HomeDevice>  device = findDevice(input);
 		if (device == nullptr) {
 			cout << "\n### Device with name" << input << " not found! ###\n";
 		}
@@ -119,7 +123,7 @@ bool HomeSystem::listDevices(int startIndex) {
 			string indexStr = to_string(i + 1 - startIndex); // +1 so it's 1 to 9 and not 0 to 8; - startIndex so its consitently 1 to 9 and not 9 - 17 ect for diffent startIndex other than 0
 			char indexChar = indexStr[0];
 			const std::type_info& typeInfo = typeid((*(*devices)[i]));
-			HomeDevice* device = (*devices)[i];
+			shared_ptr<HomeDevice>  device = (*devices)[i];
 
 			// setting up display 
 			menuDispaly[indexStr] = ": " + device->quickViewStr() + "\n";
@@ -188,7 +192,7 @@ bool HomeSystem::createLight() {
 	} while (!params->paramsCorrect);
 
 	// Create new light object 
-	Light* newLight = new Light(params->name, this, params->brightness);
+	shared_ptr<Light> newLight = make_shared<Light>(params->name, this, params->brightness);
 
 	// Add object to devices vector 
 	this->devices->push_back(newLight); 
@@ -217,7 +221,7 @@ bool HomeSystem::createTempHumidSensor() {
 	} while (!params->paramsCorrect);
 
 	// Create new TempHumidSensor object 
-	TempHumidSensor* newTempHumidSensor = new TempHumidSensor(params->name, this);
+	shared_ptr<TempHumidSensor> newTempHumidSensor = make_shared<TempHumidSensor>(params->name, this);
 
 	// Add object to devices vector 
 	this->devices->push_back(newTempHumidSensor);
@@ -233,7 +237,7 @@ bool HomeSystem::createTempHumidSensor() {
 bool HomeSystem::saveOnExit() {
 	HomeSystemFunctions::storeData(this->filePath, "", true); // will overwrite exiting file so only most upto date version is stored
 	// stroring devices
-	for (HomeDevice* device : *(this->devices)) {
+	for (shared_ptr<HomeDevice> device : *(this->devices)) {
 		device->saveOnExit(filePath);
 	}
 	return false;

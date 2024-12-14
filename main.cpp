@@ -18,16 +18,16 @@ int main() {
 	
 
 	// main program
-	/*HomeSystem* test = new HomeSystem("test","C:/Users/josia/Documents/UNI Stuff/CS/24 25/Advanced Programing/SmartHomeSystem/RuntimeFiles/");
-	test->menu();*/
+	HomeSystem* test = new HomeSystem("test","C:/Users/josia/Documents/UNI Stuff/CS/24 25/Advanced Programing/SmartHomeSystem/RuntimeFiles/");
+	test->menu();
 
 
 	// --- tests --
-	string testStr = "Hello World Its So Good to be here"; 
+	/*string testStr = "Hello World Its So Good to be here"; 
 	vector<string> testVector = HomeSystemFunctions::split(testStr, ' ');
 	for (string str : testVector) {
 		cout << str << "\n"; 
-	}
+	}*/
 
 	//string testData1[] = { "\n-----Test 1: Home Smart System Menu----- \n", 
 	//	"Enter From the following:\n", 
@@ -45,7 +45,7 @@ int main() {
 	//menuFunctions["option0"]();
 
 	// memory managemnt
-	/*delete(test); 
-	test = nullptr;*/
+	delete(test); 
+	test = nullptr;
 	return 0; 
 }
