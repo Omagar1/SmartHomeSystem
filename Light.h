@@ -11,7 +11,7 @@ struct LightParams : Params {
 class Light : public Schedule
 {
 public: 
-	Light(string name, HomeSystem* homeSystem, float brightness);
+	Light(string name, HomeSystem* homeSystem, float brightness, bool onVal = false);
 	// --- getters --
 	static LightParams* getParams();
 	// --- quick action stuff ---

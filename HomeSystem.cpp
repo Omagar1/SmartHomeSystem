@@ -3,7 +3,13 @@
 #include <functional>
 #include "HomeSystem.h"
 
-HomeSystem::HomeSystem(string name, string filePath,  vector<shared_ptr<HomeDevice>>* devices) : name(name), filePath(filePath+"/"+name+"HSS"), devices(devices) {}
+HomeSystem::HomeSystem(string name, string filePath, bool loadFromFile) : name(name), filePath(filePath+"/"+name+"HSS") {
+
+	vector<shared_ptr<HomeDevice>> devices = vector<shared_ptr<HomeDevice>>();
+
+	if (loadFromFile)
+		load(); 
+}
 
 HomeSystem::~HomeSystem() {
 
@@ -42,9 +48,9 @@ void HomeSystem::menu() {
 }
 
 shared_ptr<HomeDevice> HomeSystem::findDevice(string name) {
-	if (this->devices != nullptr) {
-		vector<shared_ptr<HomeDevice>>::iterator it(this->devices[0].begin());
-		while (it != this->devices[0].end()) {
+	if (this->devices.size() != 0) {
+		vector<shared_ptr<HomeDevice>>::iterator it(this->devices.begin());
+		while (it != this->devices.end()) {
 			if ( (*it)->getName() == name) {
 				return (*it);
 			}
@@ -55,9 +61,9 @@ shared_ptr<HomeDevice> HomeSystem::findDevice(string name) {
 }
 
 bool HomeSystem::isDevice(string name) {
-	if (this->devices != nullptr) {
-		vector<shared_ptr<HomeDevice>>::iterator it(this->devices[0].begin());
-		while (it != this->devices[0].end()) {
+	if (this->devices.size() != 0) {
+		vector<shared_ptr<HomeDevice>>::iterator it(this->devices.begin());
+		while (it != this->devices.end()) {
 			if ((*it)->getName() == name) {
 				return true;
 			}
@@ -79,7 +85,7 @@ bool HomeSystem::addDevice() {
 	return true; 
 }
 bool HomeSystem::selectDevice() {
-	int devicesLength = this->devices->size();
+	int devicesLength = this->devices.size();
 	if (devicesLength != 0) {
 		// get name of device they want to interact with 
 		string input;
@@ -103,8 +109,8 @@ bool HomeSystem::selectDevice() {
 
 
 bool HomeSystem::listDevices(int startIndex) {
-	int devicesLength = this->devices->size();
-	if (devicesLength != 0) {
+	int devicesLength = this->devices.size();
+	if (devicesLength > 0) {
 
 		// creating menue system
 		map<string, string> menuDispaly;
@@ -122,8 +128,8 @@ bool HomeSystem::listDevices(int startIndex) {
 			// geting Devices
 			string indexStr = to_string(i + 1 - startIndex); // +1 so it's 1 to 9 and not 0 to 8; - startIndex so its consitently 1 to 9 and not 9 - 17 ect for diffent startIndex other than 0
 			char indexChar = indexStr[0];
-			const std::type_info& typeInfo = typeid((*(*devices)[i]));
-			shared_ptr<HomeDevice>  device = (*devices)[i];
+			const std::type_info& typeInfo = typeid((*(devices)[i]));
+			shared_ptr<HomeDevice>  device = (devices)[i];
 
 			// setting up display 
 			menuDispaly[indexStr] = ": " + device->quickViewStr() + "\n";
@@ -195,7 +201,7 @@ bool HomeSystem::createLight() {
 	shared_ptr<Light> newLight = make_shared<Light>(params->name, this, params->brightness);
 
 	// Add object to devices vector 
-	this->devices->push_back(newLight); 
+	this->devices.push_back(newLight); 
 	
 	cout << "Light " << params->name << " has been added \n"; 
 	// cleaning up memory
@@ -224,7 +230,7 @@ bool HomeSystem::createTempHumidSensor() {
 	shared_ptr<TempHumidSensor> newTempHumidSensor = make_shared<TempHumidSensor>(params->name, this);
 
 	// Add object to devices vector 
-	this->devices->push_back(newTempHumidSensor);
+	this->devices.push_back(newTempHumidSensor);
 	
 	cout << "Temperature and Humidity Sensor:  " << params->name << " has been added \n"; 
 	// cleaning up memory
@@ -237,7 +243,7 @@ bool HomeSystem::createTempHumidSensor() {
 bool HomeSystem::saveOnExit() {
 	HomeSystemFunctions::storeData(this->filePath, "", true); // will overwrite exiting file so only most upto date version is stored
 	// stroring devices
-	for (shared_ptr<HomeDevice> device : *(this->devices)) {
+	for (shared_ptr<HomeDevice> device : (this->devices)) {
 		device->saveOnExit(filePath);
 	}
 	return false;
@@ -245,8 +251,28 @@ bool HomeSystem::saveOnExit() {
 }
 bool HomeSystem::load() {
 	// open file
-	vector<string> deviceDataVector = HomeSystemFunctions::loadData(filePath);// each enty is a string of a devices's data
-	for (string deviceData : deviceDataVector) {
+	vector<string> devicesVector = HomeSystemFunctions::loadData(filePath);// each enty is a string of a devices's data
+	for (string deviceData : devicesVector) {
+		if (deviceData != "") {
+			vector<string> deviceDataVector = HomeSystemFunctions::split(deviceData);
+			if (deviceDataVector[0] == "Light") {// will be in format:  type,name,onVal,brightness
+				// format params
+				bool onVal = stoi(deviceDataVector[2]);
+				float brightness = stof(deviceDataVector[3]);
+				// create object
+				shared_ptr<Light> device = make_shared<Light>(deviceDataVector[1], this, brightness, onVal);
+				// add to devices vector
+				this->devices.push_back(device);
+			}
+			else if (deviceDataVector[0] == "Temperature and Humidity Sensor") {// will be in format:  type,name,onVal
+				// format params
+				bool onVal = stoi(deviceDataVector[2]);
+				// create object
+				shared_ptr<TempHumidSensor> device = make_shared<TempHumidSensor>(deviceDataVector[1], this, onVal);
+				// add to devices vector
+				this->devices.push_back(device);
+			} // add devies as they are developed
+		}
 		
 	}
 	// ceated devicess

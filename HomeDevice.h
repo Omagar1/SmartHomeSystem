@@ -11,7 +11,7 @@ class HomeSystem;
 class HomeDevice
 {
 	public: 
-		HomeDevice(string name, HomeSystem* homeSystem);
+		HomeDevice(string name, HomeSystem* homeSystem, bool onVal = false);
 		// --- getters ---
 		inline string getName();
 		static Params* getParams();
@@ -39,7 +39,7 @@ class HomeDevice
 	private:
 		string name;
 		HomeSystem* homeSystem;
-		bool on = false; 
+		bool on; 
 		
 		
 };

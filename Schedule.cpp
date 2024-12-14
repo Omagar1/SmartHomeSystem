@@ -1,5 +1,5 @@
 #include "Schedule.h"
-Schedule::Schedule(string name, HomeSystem* homeSystem) : HomeDevice(name, homeSystem) {
+Schedule::Schedule(string name, HomeSystem* homeSystem, bool onVal) : HomeDevice(name, homeSystem, onVal) {
 	this->onFrom = nullptr;
 	this->onUntil = nullptr;
 }

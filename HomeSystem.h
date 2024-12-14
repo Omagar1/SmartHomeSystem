@@ -23,7 +23,7 @@ struct DeviceTypes {
 class HomeSystem
 {
 	public:
-		HomeSystem(string name, string filePath, vector<shared_ptr<HomeDevice>>* devices = new vector<shared_ptr<HomeDevice>>());
+		HomeSystem(string name, string filePath, bool loadFromFile = false);
 		~HomeSystem();
 		void menu();
 		shared_ptr<HomeDevice> findDevice(string name);
@@ -49,7 +49,7 @@ class HomeSystem
 	private:
 		string name;
 		string filePath; 
-		vector<shared_ptr<HomeDevice>>* devices; // shared as I pass pointers in other functions so I can use that device
+		vector<shared_ptr<HomeDevice>> devices; // shared as I pass pointers in other functions so I can use that device
 
 		const map<string, string> typeNames = { { "1", ": Light\n" } , { "2", ": Temperature and Humidity Sensor\n" } };
 		const map<char, function<bool()>> typeCreateFunctions = { { '1' , [this]() {return this->createLight(); } },{ '2' , [this]() {return this->createTempHumidSensor(); } } };

@@ -18,7 +18,7 @@ int main() {
 	
 
 	// main program
-	HomeSystem* test = new HomeSystem("test","C:/Users/josia/Documents/UNI Stuff/CS/24 25/Advanced Programing/SmartHomeSystem/RuntimeFiles/");
+	HomeSystem* test = new HomeSystem("test","C:/Users/josia/Documents/UNI Stuff/CS/24 25/Advanced Programing/SmartHomeSystem/RuntimeFiles/",true);
 	test->menu();
 
 

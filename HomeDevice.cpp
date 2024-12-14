@@ -1,6 +1,6 @@
 #include "HomeDevice.h"
 #include "HomeSystem.h"
-HomeDevice::HomeDevice(string name, HomeSystem* homeSystem): name(name),  homeSystem(homeSystem) {}
+HomeDevice::HomeDevice(string name, HomeSystem* homeSystem, bool onVal): name(name), homeSystem(homeSystem), on(onVal) {}
 
 
 
@@ -10,6 +10,7 @@ Params* HomeDevice::getParams() {
 	string temp;
 	cout << "\nDevice name: ";
 	cin >> temp;
+	temp = HomeSystemFunctions::trim(temp); 
 	if (temp != "") {
 		params->name = temp;
 	}

@@ -1,5 +1,5 @@
 #include "Light.h"
-Light::Light(string name, HomeSystem* homeSystem, float brightness = 1.00f): Schedule(name, homeSystem),  brightness(brightness) {}
+Light::Light(string name, HomeSystem* homeSystem, float brightness, bool onVal): Schedule(name, homeSystem, onVal),  brightness(brightness) {}
 
 LightParams* Light::getParams() {
 	LightParams* params = new LightParams();
