@@ -23,7 +23,8 @@ public:
 	bool displayHistoricData(); 
 	void setCurrentReading();
 	// --- other funtcion Stuff --- 
-	virtual void menu() override;
+	void menu() override;
+	// dosent need a saveOnExit as it's stored functions are the same as HomeDevice
 
 
 private:

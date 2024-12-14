@@ -25,8 +25,14 @@ string HomeSystemFunctions::timeToStr(time_t time, string format) {
 
 
 
-bool HomeSystemFunctions::storeData(string filePath, vector<string> data, string delimiter ) {
-	ofstream file(filePath, ios::app);
+bool HomeSystemFunctions::storeData(string filePath, vector<string> data, string delimiter, bool overWrite) {
+	ofstream file; 
+	if (overWrite) {
+		file.open(filePath);
+	}
+	else {
+		file.open(filePath, ios::app);
+	}
 
 	if (file.is_open()) {
 		file << "\n"; 
@@ -43,8 +49,14 @@ bool HomeSystemFunctions::storeData(string filePath, vector<string> data, string
 	
 }
 
-bool HomeSystemFunctions::storeData(string filePath, string str) {
-	ofstream file(filePath, ios::app);
+bool HomeSystemFunctions::storeData(string filePath, string str, bool overWrite) {
+	ofstream file;
+	if (overWrite) {
+		file.open(filePath);
+	}
+	else {
+		file.open(filePath, ios::app);
+	}
 
 	if (file.is_open()) {
 		file << "\n" << str;
@@ -91,8 +103,13 @@ string HomeSystemFunctions::trim(string str) {
 	else {
 		return str; 
 	}
-	
-	 
+ 
+}
+
+vector<string> HomeSystemFunctions::slit(string str, string delimiter) {
+	vector<string> vector;
+
+	return vector;
 }
 
 

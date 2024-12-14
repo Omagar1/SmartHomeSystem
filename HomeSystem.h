@@ -23,7 +23,7 @@ struct DeviceTypes {
 class HomeSystem
 {
 	public:
-		HomeSystem(string name, vector<HomeDevice*>* devices = new vector<HomeDevice*>());
+		HomeSystem(string name, string filePath, vector<HomeDevice*>* devices = new vector<HomeDevice*>());
 		void menu();
 		HomeDevice* findDevice(string name);
 		bool isDevice(string name);
@@ -34,8 +34,8 @@ class HomeSystem
 		bool listDevices(int startIndex = 0);
 		/*void sortByName();
 		void sortByDevice();*/
-		bool SaveOnExit();
-		bool Load(); 
+		bool saveOnExit();
+		bool load(); 
 
 		
 		bool rename(); // for homeSystem
@@ -47,6 +47,7 @@ class HomeSystem
 
 	private:
 		string name;
+		string filePath; 
 		vector<HomeDevice*>* devices;
 
 		const map<string, string> typeNames = { { "1", ": Light\n" } , { "2", ": Temperature and Humidity Sensor\n" } };

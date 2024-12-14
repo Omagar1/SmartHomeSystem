@@ -83,3 +83,4 @@ void TempHumidSensor::menu() {
 
 	HomeSystemFunctions::menuDisplay<HomeDevice*>(menuDispaly, menuFunctions, this, ignoreHeader);
 }
+

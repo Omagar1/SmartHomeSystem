@@ -1,20 +1,14 @@
 #include "Light.h"
 Light::Light(string name, HomeSystem* homeSystem, float brightness = 1.00f): Schedule(name, homeSystem),  brightness(brightness) {}
 
-bool Light::quickAction() {
-	this->switchOnVal(); 
-	return true; 
-}
-
-
 LightParams* Light::getParams() {
 	LightParams* params = new LightParams();
-	params->paramsCorrect = true; 
+	params->paramsCorrect = true;
 	string temp;
 	cout << "\nDevice name: ";
 	cin >> temp;
 	if (temp != "") {
-		params->name = temp; 
+		params->name = temp;
 	}
 	else {
 		params->paramsCorrect = false;
@@ -40,3 +34,15 @@ LightParams* Light::getParams() {
 
 	return params;
 }
+
+bool Light::quickAction() {
+	this->switchOnVal(); 
+	return true; 
+}
+void Light::saveOnExit(string filePath) {
+	// will be in format:  type,name,brightness;
+	string data = getTypeStr() + "," + this->getName() + "," + to_string(getOnVal()) + "," + to_string(this->brightness);
+	HomeSystemFunctions::storeData(filePath, data);
+}
+
+

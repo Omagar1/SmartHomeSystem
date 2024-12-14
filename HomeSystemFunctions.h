@@ -27,11 +27,12 @@ public:
 	static bool canConvertToFloat(const string& str);
 	static string timeToStr(time_t time, string format = "%Y-%m-%d %H:%M:%S"); 
 	// --- file stuff ---
-	static bool storeData(string filePath, vector<string> data, string delimiter = "," );
-	static bool storeData(string filePath, string str);
+	static bool storeData(string filePath, vector<string> data, string delimiter = ",", bool overWrite = false);
+	static bool storeData(string filePath, string str, bool overWrite = false);
 	static vector<string> loadData(string filePath);
 	// --- helpful stuff --- 
 	static string trim(string str); // removes whitespace from start and end of string
+	static vector<string> slit(string str, string delimiter = ","); 
 	
 };
 
@@ -54,12 +55,12 @@ inline void HomeSystemFunctions::displayOptions(map<string, string>outArr , vect
 }
 inline bool HomeSystemFunctions::notDevelopedYet() { cout << "Feature still in devlopment"; return true; }
 
-template<typename Class>
+template<typename Class> // donsent need to be templat any more change
 void HomeSystemFunctions::menuDisplay(map<string, string> dispaly, map<char, function<bool()>> functions, Class object, vector<string> dontDisplay) {
 	bool exit = false;
 	do {
 		string input;
-		functions['Q'] = []() { return false; };
+		functions.insert({ 'Q', []() { return false; } });// so if a caller already has a function for exit they can call that instead do this default
 
 		HomeSystemFunctions::displayOptions(dispaly, dontDisplay);
 		cout << "Q: Exit \n"; 

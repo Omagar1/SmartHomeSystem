@@ -25,6 +25,7 @@ class HomeDevice
 		virtual bool quickAction(); 
 		// --- rest of functions --- 
 		virtual void menu();
+		virtual void saveOnExit(string filePath); 
 		virtual void load();
 		
 

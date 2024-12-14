@@ -3,7 +3,7 @@
 #include <functional>
 #include "HomeSystem.h"
 
-HomeSystem::HomeSystem(string name, vector<HomeDevice*>* devices) : name(name), devices(devices) {}
+HomeSystem::HomeSystem(string name, string filePath,  vector<HomeDevice*>* devices) : name(name), filePath(filePath+"/"+name+"HSS"), devices(devices) {}
 
 void HomeSystem::menu() {
 
@@ -28,7 +28,8 @@ void HomeSystem::menu() {
 	menuFunctions['4'] = [this]() {return this->selectDevice(); };
 	menuFunctions['5'] = bind(&HomeSystem::addDevice, this);
 	menuFunctions['6'] = [this]() {return this->rename();  };
-	menuFunctions['['] = HomeSystemFunctions::notDevelopedYet; 
+	menuFunctions['['] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['Q'] = [this]() {return this->saveOnExit();  }; // 'overiding' default menu Q function
 	
 
 	vector<string> ignoreHeader = { "0header", "0intro" };
@@ -114,17 +115,13 @@ bool HomeSystem::listDevices(int startIndex) {
 		}
 		int i;
 		for (i = startIndex; i < devicesLength && i < (startIndex + 10); i++) {
+			// geting Devices
 			string indexStr = to_string(i + 1 - startIndex); // +1 so it's 1 to 9 and not 0 to 8; - startIndex so its consitently 1 to 9 and not 9 - 17 ect for diffent startIndex other than 0
 			char indexChar = indexStr[0];
 			const std::type_info& typeInfo = typeid((*(*devices)[i]));
 			HomeDevice* device = (*devices)[i];
 
-			// making sure I get the right class so the methods are correct
-			if (typeInfo == typeid(Light)) {
-				device = dynamic_cast<Light*>(device);
-			}
-			// add classes to if as they are made 
-			
+			// setting up display 
 			menuDispaly[indexStr] = ": " + device->quickViewStr() + "\n";
 			menuFunctions[indexChar] = [device]() {return device->quickAction(); };
 		}
@@ -232,3 +229,23 @@ bool HomeSystem::createTempHumidSensor() {
 	return false; // as after creation we want to return to main menu 
 	
 }
+
+bool HomeSystem::saveOnExit() {
+	HomeSystemFunctions::storeData(this->filePath, "", true); // will overwrite exiting file so only most upto date version is stored
+	// stroring devices
+	for (HomeDevice* device : *(this->devices)) {
+		device->saveOnExit(filePath);
+	}
+	return false;
+
+}
+bool HomeSystem::load() {
+	// open file
+	vector<string> deviceDataVector = HomeSystemFunctions::loadData(filePath);// each enty is a string of a devices's data
+	for (string deviceData : deviceDataVector) {
+		
+	}
+	// ceated devicess
+	return true;
+}
+

@@ -53,6 +53,12 @@ void HomeDevice::menu() {
 	HomeSystemFunctions::menuDisplay<HomeDevice*>(menuDispaly, menuFunctions, this, ignoreHeader);
 }
 
+void HomeDevice::saveOnExit(string filePath) {
+	// will be in format:  type,name,*other atributes*
+	string data = getTypeStr() + "," + this->getName() + "," + to_string(getOnVal());
+	HomeSystemFunctions::storeData(filePath, data);
+}
+
 void HomeDevice::load() {
 	// get data from file
 }

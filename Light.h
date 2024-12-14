@@ -12,11 +12,16 @@ class Light : public Schedule
 {
 public: 
 	Light(string name, HomeSystem* homeSystem, float brightness);
+	// --- getters --
+	static LightParams* getParams();
 	// --- quick action stuff ---
 	inline string quickViewStr(string delimiter = " ") override;
 	bool quickAction() override;
-	//
-	static LightParams* getParams();
+	// --- other stuff --- 
+	/*void menu() override;*/
+	void saveOnExit(string filePath) override;
+	/*virtual void load();*/
+	
 
 private:
 	float brightness; // percentage stored as value between 0 and 1.00
