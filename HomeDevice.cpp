@@ -60,9 +60,6 @@ void HomeDevice::saveOnExit(string filePath) {
 	HomeSystemFunctions::storeData(filePath, data);
 }
 
-void HomeDevice::load() {
-	// get data from file
-}
 
 bool HomeDevice::rename(HomeSystem* homeSystem) { // for device 
 	string input;

@@ -1,5 +1,7 @@
 #pragma once
 #include <ctime>
+#include<thread>
+#include<chrono>
 #include <filesystem>
 #include <time.h>
 #include "HomeDevice.h"
@@ -7,6 +9,9 @@
 // time code developed using:
 //  https://www.w3schools.com/cpp/cpp_date.asp?form=MG0AV3
 //  https://cplusplus.com/reference/ctime/strftime/
+
+class ThreadManager;
+
 class TempHumidSensor : public HomeDevice
 {
 public:
@@ -22,6 +27,7 @@ public:
 	bool displayCurrentData();
 	bool displayHistoricData(); 
 	void setCurrentReading();
+	void generateHistoricData(ThreadManager* threadManager, int readEvery = 5); // readEvery: sets the time between readings in minutes
 	// --- other funtcion Stuff --- 
 	void menu() override;
 	// dosent need a saveOnExit as it's stored functions are the same as HomeDevice

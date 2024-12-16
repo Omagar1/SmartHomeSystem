@@ -1,4 +1,6 @@
 #include "TempHumidSensor.h"
+#include "HomeSystem.h"
+
 TempHumidSensor::TempHumidSensor(string Name, HomeSystem* homeSystem, bool onVal): HomeDevice(Name, homeSystem, onVal) {
 	// set file paths - if i get a chance i wil create a strandard file path that can be chanaged
 	
@@ -8,8 +10,16 @@ TempHumidSensor::TempHumidSensor(string Name, HomeSystem* homeSystem, bool onVal
 	this->lastHumidReading = (rand() % 100) / 100;
 	this->lastTempReading = rand() % 30; 
 	// --- store last data --- 
-	// getting current time
-	
+	time_t timeNow = std::time(nullptr); // Get current time 
+	string timeNowStr = HomeSystemFunctions::timeToStr(timeNow);
+	// setting up data string
+	vector<string> data = { timeNowStr, this->getLastHumidReadingStr(), this->getLastTempReadingStr() };
+	// storing data 
+	HomeSystemFunctions::storeData(this->FilePath, data, ":");
+	// --- setting up thread to generate historic data --- 
+	ThreadManager* threadManager = homeSystem->getThreadManagerPtr();
+	threadManager->createThread(&TempHumidSensor::generateHistoricData, this, threadManager, 5); // last param is the time between reading, if i have time i will make this user set
+
 }
 
 
@@ -29,7 +39,7 @@ void TempHumidSensor::setCurrentReading() {
 	if (rand() % 2 == 0) { this->lastTempReading += rand() % 5; }
 	else { this->lastTempReading -= rand() % 5; }
 	// --- store in file --- 
-	time_t timeNow = std::time(nullptr); // Get current time std::string timeStr = timeToString
+	time_t timeNow = std::time(nullptr); // Get current time 
 	string timeNowStr = HomeSystemFunctions::timeToStr(timeNow);
 	// setting up data string
 	vector<string> data = { timeNowStr, this->getLastHumidReadingStr(), this->getLastTempReadingStr() };
@@ -51,6 +61,14 @@ bool TempHumidSensor::displayHistoricData() {
 		cout << line << "\n";
 	}
 	return true;
+}
+
+void TempHumidSensor::generateHistoricData(ThreadManager* threadManager, int readEvery) {
+
+	while (this->getOnVal() && threadManager->getStopFlag().load()) { // seccond value so when sytsem is closed the thread stops
+		std::this_thread::sleep_for(std::chrono::minutes(readEvery));
+		this->setCurrentReading();
+	}
 }
 
 void TempHumidSensor::menu() {
