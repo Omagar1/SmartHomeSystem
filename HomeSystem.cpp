@@ -5,14 +5,15 @@
 
 HomeSystem::HomeSystem(string name, string filePath, bool loadFromFile) : name(name), filePath(filePath+"/"+name+"HSS") {
 
-	vector<shared_ptr<HomeDevice>> devices = vector<shared_ptr<HomeDevice>>();
-
+	this->devices = vector<shared_ptr<HomeDevice>>();
+	this->threadManager = new ThreadManager();
 	if (loadFromFile)
 		load(); 
 }
 
 HomeSystem::~HomeSystem() {
-
+	delete(this->threadManager);
+	this->threadManager = nullptr; 
 }
 
 void HomeSystem::menu() {

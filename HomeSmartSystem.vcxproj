@@ -138,6 +138,7 @@
     <ClCompile Include="Schedule.cpp" />
     <ClCompile Include="SleepDevice.cpp" />
     <ClCompile Include="TempHumidSensor.cpp" />
+    <ClCompile Include="ThreadManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonFunctions.h" />
@@ -149,6 +150,7 @@
     <ClInclude Include="Schedule.h" />
     <ClInclude Include="SleepDevice.h" />
     <ClInclude Include="TempHumidSensor.h" />
+    <ClInclude Include="ThreadManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

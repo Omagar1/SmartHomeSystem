@@ -8,6 +8,7 @@
 #include "Light.h"
 #include "TempHumidSensor.h"
 #include "HomeSystemFunctions.h"
+#include "ThreadManager.h"
 
 
 
@@ -37,6 +38,7 @@ class HomeSystem
 		void sortByDevice();*/
 		bool saveOnExit();
 		bool load(); 
+		inline ThreadManager* getThreadManagerPtr();
 
 		
 		bool rename(); // for homeSystem
@@ -48,12 +50,14 @@ class HomeSystem
 
 	private:
 		string name;
-		string filePath; 
+		string filePath;
+		ThreadManager* threadManager; 
 		vector<shared_ptr<HomeDevice>> devices; // shared as I pass pointers in other functions so I can use that device
 
 		const map<string, string> typeNames = { { "1", ": Light\n" } , { "2", ": Temperature and Humidity Sensor\n" } };
 		const map<char, function<bool()>> typeCreateFunctions = { { '1' , [this]() {return this->createLight(); } },{ '2' , [this]() {return this->createTempHumidSensor(); } } };
 }; 
+ThreadManager* HomeSystem::getThreadManagerPtr() {return this->threadManager;}
 
 
 
