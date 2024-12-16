@@ -95,7 +95,7 @@ void TempHumidSensor::menu() {
 	menuFunctions['2'] = [this]() {return this->rename(this->getHomeSystem()); };
 	menuFunctions['3'] = [this]() {return this->displayCurrentData(); };
 	menuFunctions['4'] = [this]() {return this->displayHistoricData(); };
-	menuFunctions['D'] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['D'] = [this]() {return this->getHomeSystem()->deleteDevice(this); };
 
 	vector<string> ignoreHeader = { "0header", "0intro" , "0data" , "0Adataheader"};
 

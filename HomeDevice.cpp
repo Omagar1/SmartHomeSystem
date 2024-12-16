@@ -47,7 +47,7 @@ void HomeDevice::menu() {
 	map<char, function<bool()>> menuFunctions;
 	menuFunctions['1'] = [this]() {cout << "\n Switching " << this->getOpositeOnValStr()<<"\n"; this->switchOnVal(); return true;   };
 	menuFunctions['2'] = [this]() {return this->rename(this->homeSystem); };
-	menuFunctions['D'] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['D'] = [this]() {return this->getHomeSystem()->deleteDevice(this); };
 	
 	vector<string> ignoreHeader = { "0header", "0intro" , "0Status" };
 

@@ -1,4 +1,5 @@
 #include "Light.h"
+#include "HomeSystem.h"
 Light::Light(string name, HomeSystem* homeSystem, float brightness, bool onVal): SleepDevice(name, homeSystem, onVal),  brightness(brightness) {}
 
 LightParams* Light::getParams() {
@@ -57,13 +58,13 @@ void Light::menu() {
 		{"D", ": Delete \n"},
 	};
 
-
+	
 	map<char, function<bool()>> menuFunctions;
 	menuFunctions['1'] = [this]() {cout << "\n Switching " << this->getOpositeOnValStr() << "\n"; this->switchOnVal(); return true;   };
 	menuFunctions['2'] = [this]() {return this->rename(this->getHomeSystem()); };
 	menuFunctions['3'] = HomeSystemFunctions::notDevelopedYet;
-	menuFunctions['4'] = [this]() {return this->setSleepTimer(); };
-	menuFunctions['D'] = HomeSystemFunctions::notDevelopedYet;
+	menuFunctions['4'] = [this]() {return this->setSleepTimer(); }; 
+	menuFunctions['D'] = [this]() {return this->getHomeSystem()->deleteDevice(this); };
 
 	vector<string> ignoreHeader = { "0header", "0intro" , "0data" , "0Adataheader" };
 

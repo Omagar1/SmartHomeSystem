@@ -280,3 +280,25 @@ bool HomeSystem::load() {
 	return true;
 }
 
+bool HomeSystem::deleteDevice(HomeDevice* deviceToDelete) {
+	string input; 
+	cout << "Delete " + deviceToDelete->getName() + "?\n";
+	cout << "Enter Y for yes and N for No: "; 
+	cin >> input; 
+	input = HomeSystemFunctions::trim(input);
+	if (input == "Y") {
+		this->devices.erase(remove(this->devices.begin(), this->devices.end(), deviceToDelete), this->devices.end());
+		return true;
+	}
+	else if (input == "N") {
+		return true; 
+	}
+	else {
+		cout << "\n ### Invalid Input ### \n ";
+		deleteDevice(deviceToDelete);
+	}
+
+	
+	// no need for pointer clean up as im using smart pointers 
+}
+

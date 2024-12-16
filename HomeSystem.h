@@ -38,6 +38,7 @@ class HomeSystem
 		void sortByDevice();*/
 		bool saveOnExit();
 		bool load(); 
+		bool deleteDevice(HomeDevice* deviceToDelete);
 		inline ThreadManager* getThreadManagerPtr();
 
 		
