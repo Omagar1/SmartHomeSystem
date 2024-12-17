@@ -1,7 +1,9 @@
 #include "HomeDevice.h"
 #include "HomeSystem.h"
 HomeDevice::HomeDevice(string name, HomeSystem* homeSystem, bool onVal): name(name), homeSystem(homeSystem), on(onVal) {}
-
+HomeDevice::~HomeDevice(){
+	this->homeSystem = nullptr; // removing pointer but not cleaning up memorary becuse we are not deleting home system 
+}
 
 
 Params* HomeDevice::getParams() {

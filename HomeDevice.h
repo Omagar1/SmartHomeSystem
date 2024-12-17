@@ -12,6 +12,7 @@ class HomeDevice
 {
 	public: 
 		HomeDevice(string name, HomeSystem* homeSystem, bool onVal = false);
+		~HomeDevice(); 
 		// --- getters ---
 		inline string getName();
 		static Params* getParams();

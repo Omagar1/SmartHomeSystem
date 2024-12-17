@@ -287,8 +287,11 @@ bool HomeSystem::deleteDevice(HomeDevice* deviceToDelete) {
 	cin >> input; 
 	input = HomeSystemFunctions::trim(input);
 	if (input == "Y") {
-		this->devices.erase(remove(this->devices.begin(), this->devices.end(), deviceToDelete), this->devices.end());
-		return true;
+		// find device to remove
+		// cannot compare share pointers to raw pointers and cannot convert without creating a new object so 
+		// using findDevice that returns the shared pointer to the device
+		this->devices.erase(remove(this->devices.begin(), this->devices.end(), this->findDevice(deviceToDelete->getName())), this->devices.end());
+		return false; // as We want to exit the menue system after deletion 
 	}
 	else if (input == "N") {
 		return true; 
