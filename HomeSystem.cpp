@@ -124,11 +124,11 @@ bool HomeSystem::listDevices(int startIndex) {
 		do {
 			// numbers in headers are so they are displayed in correct order
 			menuDispaly["0intro"] = "Select from the following to do that device's Quick Action: \n";
-			if (devicesLength % 10 > 1) {
-				menuDispaly["0Page"] = "Page " + to_string(devicesLength % (startIndex + 1) + 1) + " of " + to_string(devicesLength % 10) + " \n";
+			if (devicesLength % 9 > 1) {
+				menuDispaly["0Page"] = "Page " + to_string(devicesLength % (startIndex + 1) + 1) + " of " + to_string(devicesLength % 9) + " \n";
 			}
 			int i;
-			for (i = startIndex; i < devicesLength && i < (startIndex + 10); i++) {
+			for (i = startIndex; i < devicesLength && i < (startIndex + 9); i++) {
 				// geting Devices
 				string indexStr = to_string(i + 1 - startIndex); // +1 so it's 1 to 9 and not 0 to 8; - startIndex so its consitently 1 to 9 and not 9 - 17 ect for diffent startIndex other than 0
 				char indexChar = indexStr[0];
@@ -142,13 +142,13 @@ bool HomeSystem::listDevices(int startIndex) {
 			// adding next page function
 			if (i < devicesLength) {
 				menuDispaly["N"] = ": Next Page \n";
-				menuFunctions['N'] = [this, i]() {return this->listDevices(i); }; // using i here as i will inciment then exit the for loop so will be thge next index for display
+				menuFunctions['N'] = [this, i]() { this->listDevices(i); return false; }; // using i here as i will inciment then exit the for loop so will be thge next index for display | false is returned so we dont get in a recurtion chain
 			}
 			// adding previous page function
-			else if (i > 9) {
+			else if (i > 9 && devicesLength > 9) {
 				menuDispaly["P"] = ": Previous Page \n";
 				int previousStartIndex = i - 10; // as im goingfrom 0 to 10 (not 9 as i will inciment then exit the for loop) 
-				menuFunctions['P'] = [this, previousStartIndex]() {return this->listDevices(previousStartIndex); };
+				menuFunctions['P'] = [this, previousStartIndex]() {this->listDevices(previousStartIndex); return false; }; // false is returned so we dont get in a recurtion chain
 			}
 
 		} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, this->threadManager, ignore));

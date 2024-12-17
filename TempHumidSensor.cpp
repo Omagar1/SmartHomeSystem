@@ -39,7 +39,7 @@ void TempHumidSensor::setCurrentReading() {
 	if (rand() % 2 == 0) { this->lastTempReading += rand() % 5; }
 	else { this->lastTempReading -= rand() % 5; }
 	// --- store in file --- 
-	time_t timeNow = std::time(nullptr); // Get current time 
+	time_t timeNow = time(nullptr); // Get current time 
 	string timeNowStr = HomeSystemFunctions::timeToStr(timeNow);
 	// setting up data string
 	vector<string> data = { timeNowStr, this->getLastHumidReadingStr(), this->getLastTempReadingStr() };
