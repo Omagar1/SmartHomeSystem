@@ -53,7 +53,7 @@ void HomeDevice::menu() {
 	
 	vector<string> ignoreHeader = { "0header", "0intro" , "0Status" };
 
-	HomeSystemFunctions::menuDisplay<HomeDevice*>(menuDispaly, menuFunctions, this, ignoreHeader);
+	HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader);
 }
 
 void HomeDevice::saveOnExit(string filePath) {

@@ -1,7 +1,29 @@
 #include "HomeSystemFunctions.h"
 
+void HomeSystemFunctions::menuDisplay(map<string, string> dispaly, map<char, function<bool()>> functions, vector<string> dontDisplay) {
+	bool exit = false;
+	do {
+		string input;
+		functions.insert({ 'Q', []() { return false; } });// so if a caller already has a function for exit they can call that instead do this default
 
-// devolped with help form MS co pilate  
+		HomeSystemFunctions::displayOptions(dispaly, dontDisplay);
+		cout << "Q: Exit \n";
+		cout << "Input: ";
+		cin >> input;
+
+		// runs related funcution if input is a key of functions
+		if (functions.find(input[0]) != functions.end()) {
+			char key = input[0];
+
+			exit = !functions[key]();
+		}
+		else {
+			cout << "\n ### Invalid input Try again: ### \n";
+		}
+	} while (!exit);
+}
+
+  
 bool HomeSystemFunctions::canConvertToFloat(const string& str) {
 	try { 
 		stof(str); return true; 
@@ -9,7 +31,6 @@ bool HomeSystemFunctions::canConvertToFloat(const string& str) {
 	catch (const invalid_argument&) 
 	{ 
 		return false;
-
 	} 
 	catch (const out_of_range&) { 
 		return false; 

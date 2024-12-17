@@ -68,7 +68,7 @@ void Light::menu() {
 
 	vector<string> ignoreHeader = { "0header", "0intro" , "0data" , "0Adataheader" };
 
-	HomeSystemFunctions::menuDisplay<HomeDevice*>(menuDispaly, menuFunctions, this, ignoreHeader);
+	HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader);
 }
 
 void Light::saveOnExit(string filePath) {

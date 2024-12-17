@@ -5,5 +5,13 @@ C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\
   
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(89,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(113,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  TempHumidSensor.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'TempHumidSensor.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\TempHumidSensor.cpp(10,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\TempHumidSensor.cpp(11,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(306,1): warning C4715: 'HomeSystem::deleteDevice': not all control paths return a value
   HomeSmartSystem.vcxproj -> C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\x64\Debug\HomeSmartSystem.exe

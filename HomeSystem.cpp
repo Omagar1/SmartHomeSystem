@@ -45,7 +45,7 @@ void HomeSystem::menu() {
 
 	vector<string> ignoreHeader = { "0header", "0intro" };
 
-	HomeSystemFunctions::menuDisplay<HomeSystem*>(menuDispaly, menuFunctions, this, ignoreHeader);
+	HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader);
 }
 
 shared_ptr<HomeDevice> HomeSystem::findDevice(string name) {
@@ -81,7 +81,7 @@ bool HomeSystem::addDevice() {
 	display["0intro"] = "Enter from the following numbers to create corisponding devices: \n"; // spell check
 	vector<string> ignore = { "0intro"};
 
-	HomeSystemFunctions::menuDisplay<HomeSystem*>(display, this->typeCreateFunctions, this,  ignore);
+	HomeSystemFunctions::menuDisplay(display, this->typeCreateFunctions, ignore);
 
 	return true; 
 }
@@ -148,7 +148,7 @@ bool HomeSystem::listDevices(int startIndex) {
 			menuFunctions['P'] = [this, previousStartIndex]() {return this->listDevices(previousStartIndex); };
 		}
 
-		HomeSystemFunctions::menuDisplay<HomeSystem*>(menuDispaly, menuFunctions, this, ignore);
+		HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignore);
 	}
 	else {
 		cout << "\n --- No Devices to Dsiaply --- \n"; 
