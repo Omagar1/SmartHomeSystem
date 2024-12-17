@@ -72,33 +72,32 @@ void TempHumidSensor::generateHistoricData(ThreadManager* threadManager, int rea
 }
 
 void TempHumidSensor::menu() {
-	// so reading are simulated to be taken without using threads 
-	this->setCurrentReading();
-
-	cout << "\n"; // so teh input line doesnt get mixed up with the output
-	// numbers and leters in headers are so they are displayed in correct order
-	map<string, string> menuDispaly = {
-		{"0Adataheader", "\n-----" + this->getName() + "Data ----- \n"}, 
-		{"0data", this->quickViewStr("\n")}, 
-		{"0header", "\n-----" + this->getName() + " Home Device Menu----- \n"},
-		{"0intro", "Enter From the following:\n"},
-		{"1", ": Toggle On Switch\n"},
-		{"2", ": Rename Device  \n"},
-		{"3", ": Display Current Readings  \n"},
-		{"4", ": Display Historic Readings  \n"},
-		{"D", ": Delete \n"},
-	};
-	
-
+	map<string, string> menuDispaly;
 	map<char, function<bool()>> menuFunctions;
-	menuFunctions['1'] = [this]() {cout << "\n Switching " << this->getOpositeOnValStr() << "\n"; this->switchOnVal(); return true;   };
-	menuFunctions['2'] = [this]() {return this->rename(this->getHomeSystem()); };
-	menuFunctions['3'] = [this]() {return this->displayCurrentData(); };
-	menuFunctions['4'] = [this]() {return this->displayHistoricData(); };
-	menuFunctions['D'] = [this]() {return this->getHomeSystem()->deleteDevice(this); };
+	vector<string> ignoreHeader; 
+	do {
+		cout << "\n"; // so the input line doesnt get mixed up with the output
+		// numbers and leters in headers are so they are displayed in correct order
+		menuDispaly = {
+			{"0Adataheader", "\n-----" + this->getName() + "Data ----- \n"},
+			{"0data", this->quickViewStr("\n")},
+			{"0header", "\n-----" + this->getName() + " Home Device Menu----- \n"},
+			{"0intro", "Enter From the following:\n"},
+			{"1", ": Toggle On Switch\n"},
+			{"2", ": Rename Device  \n"},
+			{"3", ": Display Current Readings  \n"},
+			{"4", ": Display Historic Readings  \n"},
+			{"D", ": Delete \n"},
+		};
 
-	vector<string> ignoreHeader = { "0header", "0intro" , "0data" , "0Adataheader"};
+		ignoreHeader = { "0header", "0intro" , "0data" , "0Adataheader" };
+		
+		menuFunctions['1'] = [this]() {cout << "\n Switching " << this->getOpositeOnValStr() << "\n"; this->switchOnVal(); return true;   };
+		menuFunctions['2'] = [this]() {return this->rename(this->getHomeSystem()); };
+		menuFunctions['3'] = [this]() {return this->displayCurrentData(); };
+		menuFunctions['4'] = [this]() {return this->displayHistoricData(); };
+		menuFunctions['D'] = [this]() {return this->getHomeSystem()->deleteDevice(this); };
 
-	HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader);
+	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader));
 }
 

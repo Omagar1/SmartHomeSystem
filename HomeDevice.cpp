@@ -35,25 +35,27 @@ bool HomeDevice::quickAction() {
 }
 
 void HomeDevice::menu() {
-	// numbers in headers are so they are displayed in correct order
-	map<string, string> menuDispaly = {
-		{"0header", "\n-----" + this->name + " Home Device Menu----- \n"}, /// then this 
-		{"0Status", "Status: "+ getOnValStr() + " \n"}, // this displays first - need to fix 
-		{"0intro", "Enter From the following:\n"},
-		{"1", ": Toggle On Switch\n"},
-		{"2", ": Rename Device  \n"},
-		{"D", ": Delete \n"},
-	};
-
-
+	map<string, string> menuDispaly;
 	map<char, function<bool()>> menuFunctions;
-	menuFunctions['1'] = [this]() {cout << "\n Switching " << this->getOpositeOnValStr()<<"\n"; this->switchOnVal(); return true;   };
-	menuFunctions['2'] = [this]() {return this->rename(this->homeSystem); };
-	menuFunctions['D'] = [this]() {return this->getHomeSystem()->deleteDevice(this); };
-	
-	vector<string> ignoreHeader = { "0header", "0intro" , "0Status" };
+	vector<string> ignoreHeader;
+	do {
+		// numbers in headers are so they are displayed in correct order
+		menuDispaly = {
+			{"0header", "\n-----" + this->name + " Home Device Menu----- \n"}, /// then this 
+			{"0Status", "Status: " + getOnValStr() + " \n"}, // this displays first - need to fix 
+			{"0intro", "Enter From the following:\n"},
+			{"1", ": Toggle On Switch\n"},
+			{"2", ": Rename Device  \n"},
+			{"D", ": Delete \n"},
+		};
 
-	HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader);
+		ignoreHeader = { "0header", "0intro" , "0Status" };
+		
+		menuFunctions['1'] = [this]() {cout << "\n Switching " << this->getOpositeOnValStr() << "\n"; this->switchOnVal(); return true;   };
+		menuFunctions['2'] = [this]() {return this->rename(this->homeSystem); };
+		menuFunctions['D'] = [this]() {return this->getHomeSystem()->deleteDevice(this); };
+
+	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader));
 }
 
 void HomeDevice::saveOnExit(string filePath) {

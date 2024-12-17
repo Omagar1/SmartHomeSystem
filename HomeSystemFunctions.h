@@ -22,7 +22,7 @@ public:
 
 	inline static void displayOptions(map<string, string>outArr, vector<string> dontDisplay = vector<string>());
 	inline static bool notDevelopedYet();
-	static void menuDisplay(const map<string, string> dispaly, const map<char, function<bool()>> functions, const vector<string> dontDisplay = vector<string>());
+	static bool menuDisplay(const map<string, string> dispaly, const map<char, function<bool()>> functions, const vector<string> dontDisplay = vector<string>());
 	static bool canConvertToFloat(const string& str);
 	static string timeToStr(time_t time, string format = "%Y-%m-%d %H:%M:%S"); 
 	// --- file stuff ---

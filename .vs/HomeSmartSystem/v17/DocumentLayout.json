@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\SleepDevice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:SleepDevice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:HomeSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystemFunctions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:HomeSystemFunctions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystemFunctions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:HomeSystemFunctions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\Light.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:Light.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\Light.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -31,16 +15,32 @@
       "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:HomeDevice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeDevice.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:HomeDevice.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\Schedule.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:Schedule.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\Light.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:Light.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\TempHumidSensor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:TempHumidSensor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystemFunctions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:HomeSystemFunctions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystemFunctions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:HomeSystemFunctions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeDevice.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:HomeDevice.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\SleepDevice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:SleepDevice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\Schedule.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|solutionrelative:Schedule.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CDFE750B-8B31-4A06-AE0F-942047482DC2}|HomeSmartSystem.vcxproj|C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -91,30 +91,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "HomeSystem.cpp",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystem.cpp",
               "RelativeDocumentMoniker": "HomeSystem.cpp",
               "ToolTip": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystem.cpp",
               "RelativeToolTip": "HomeSystem.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAQwJ4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-13T12:54:13.24Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "TempHumidSensor.cpp",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\TempHumidSensor.cpp",
               "RelativeDocumentMoniker": "TempHumidSensor.cpp",
               "ToolTip": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\TempHumidSensor.cpp",
               "RelativeToolTip": "TempHumidSensor.cpp",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAGgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAQwGQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-12T10:38:16.547Z",
               "EditorCaption": ""
@@ -129,11 +129,12 @@
               "RelativeToolTip": "Schedule.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-12T09:00:50.614Z"
+              "WhenOpened": "2024-12-12T09:00:50.614Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Schedule.cpp",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\Schedule.cpp",
               "RelativeDocumentMoniker": "Schedule.cpp",
@@ -154,7 +155,8 @@
               "RelativeToolTip": "main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-10T10:54:23.767Z"
+              "WhenOpened": "2024-12-10T10:54:23.767Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -166,17 +168,18 @@
               "RelativeToolTip": "SleepDevice.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-10T10:54:18.943Z"
+              "WhenOpened": "2024-12-10T10:54:18.943Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "SleepDevice.cpp",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\SleepDevice.cpp",
               "RelativeDocumentMoniker": "SleepDevice.cpp",
               "ToolTip": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\SleepDevice.cpp",
               "RelativeToolTip": "SleepDevice.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-10T10:54:24.527Z",
               "EditorCaption": ""
@@ -191,7 +194,8 @@
               "RelativeToolTip": "ThreadManager.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-16T10:14:09.634Z"
+              "WhenOpened": "2024-12-16T10:14:09.634Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -203,17 +207,18 @@
               "RelativeToolTip": "ThreadManager.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-16T10:08:15.453Z"
+              "WhenOpened": "2024-12-16T10:08:15.453Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Light.cpp",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\Light.cpp",
               "RelativeDocumentMoniker": "Light.cpp",
               "ToolTip": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\Light.cpp",
               "RelativeToolTip": "Light.cpp",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEQAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwEgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-10T10:54:23.191Z",
               "EditorCaption": ""
@@ -233,52 +238,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "HomeDevice.cpp",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeDevice.cpp",
               "RelativeDocumentMoniker": "HomeDevice.cpp",
               "ToolTip": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeDevice.cpp",
               "RelativeToolTip": "HomeDevice.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-10T10:54:21.231Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Light.h",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\Light.h",
               "RelativeDocumentMoniker": "Light.h",
               "ToolTip": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\Light.h",
               "RelativeToolTip": "Light.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-10T10:54:18.375Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "HomeSystemFunctions.h",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystemFunctions.h",
               "RelativeDocumentMoniker": "HomeSystemFunctions.h",
               "ToolTip": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystemFunctions.h",
               "RelativeToolTip": "HomeSystemFunctions.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-10T10:54:17.728Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "HomeSystemFunctions.cpp",
               "DocumentMoniker": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystemFunctions.cpp",
               "RelativeDocumentMoniker": "HomeSystemFunctions.cpp",
               "ToolTip": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystemFunctions.cpp",
               "RelativeToolTip": "HomeSystemFunctions.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-10T10:54:22.393Z",
               "EditorCaption": ""
@@ -293,7 +298,8 @@
               "RelativeToolTip": "TempHumidSensor.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-12T09:13:07.224Z"
+              "WhenOpened": "2024-12-12T09:13:07.224Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -303,9 +309,10 @@
               "RelativeDocumentMoniker": "HomeSystem.h",
               "ToolTip": "C:\\Users\\josia\\Documents\\UNI Stuff\\CS\\24 25\\Advanced Programing\\SmartHomeSystem\\HomeSystem.h",
               "RelativeToolTip": "HomeSystem.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAABBwCcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-10T10:54:17.107Z"
+              "WhenOpened": "2024-12-10T10:54:17.107Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -317,7 +324,8 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\xutility",
               "ViewState": "AgIAAHQBAAAAAAAAAAApwJIBAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-17T11:07:03.057Z"
+              "WhenOpened": "2024-12-17T11:07:03.057Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -329,7 +337,8 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\thread",
               "ViewState": "AgIAAB0AAAAAAAAAAAApwDgAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-16T13:17:40.237Z"
+              "WhenOpened": "2024-12-16T13:17:40.237Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -341,7 +350,8 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
               "ViewState": "AgIAACUHAAAAAAAAAADwv1AHAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-14T13:13:34.687Z"
+              "WhenOpened": "2024-12-14T13:13:34.687Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -353,7 +363,8 @@
               "RelativeToolTip": "Params.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-11T12:45:39.826Z"
+              "WhenOpened": "2024-12-11T12:45:39.826Z",
+              "EditorCaption": ""
             }
           ]
         }

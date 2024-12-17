@@ -17,35 +17,36 @@ HomeSystem::~HomeSystem() {
 }
 
 void HomeSystem::menu() {
-
-	// numbers in headers are so they are displayed in correct order
-	map<string, string> menuDispaly = {
-		{"0header", "\n-----" + this->name + " Home Smart System Menu----- \n"},
-		{"0intro", "Enter From the following:\n"},
-		{"[device name]", ": Device Quick Display \n"},
-		{"1", ": List devices \n"},
-		{"2", ": Sort by name \n"},
-		{"3", ": Sort by device type (by name as secondary order) \n"},
-		{"4", ": Select device to interact with its full feature set \n"},
-		{"5", ": Add device \n"},
-		{"6", ": Rename Home System \n"},
-	};
-
-
+	// initailising
+	map<string, string> menuDispaly;
 	map<char, function<bool()>> menuFunctions;
-	menuFunctions['1'] = [this]() {return this->listDevices(); };
-	menuFunctions['2'] = HomeSystemFunctions::notDevelopedYet;
-	menuFunctions['3'] = HomeSystemFunctions::notDevelopedYet;
-	menuFunctions['4'] = [this]() {return this->selectDevice(); };
-	menuFunctions['5'] = bind(&HomeSystem::addDevice, this);
-	menuFunctions['6'] = [this]() {return this->rename();  };
-	menuFunctions['['] = HomeSystemFunctions::notDevelopedYet;
-	menuFunctions['Q'] = [this]() {return this->saveOnExit();  }; // 'overiding' default menu Q function
-	
+	vector<string> ignoreHeader;
+	do {
+		// numbers in headers are so they are displayed in correct order
+		menuDispaly = {
+			{"0header", "\n-----" + this->name + " Home Smart System Menu----- \n"},
+			{"0intro", "Enter From the following:\n"},
+			{"[device name]", ": Device Quick Display \n"},
+			{"1", ": List devices \n"},
+			{"2", ": Sort by name \n"},
+			{"3", ": Sort by device type (by name as secondary order) \n"},
+			{"4", ": Select device to interact with its full feature set \n"},
+			{"5", ": Add device \n"},
+			{"6", ": Rename Home System \n"},
+		};
 
-	vector<string> ignoreHeader = { "0header", "0intro" };
+		ignoreHeader = { "0header", "0intro" };
+		
+		menuFunctions['1'] = [this]() {return this->listDevices(); };
+		menuFunctions['2'] = HomeSystemFunctions::notDevelopedYet;
+		menuFunctions['3'] = HomeSystemFunctions::notDevelopedYet;
+		menuFunctions['4'] = [this]() {return this->selectDevice(); };
+		menuFunctions['5'] = bind(&HomeSystem::addDevice, this);
+		menuFunctions['6'] = [this]() {return this->rename();  };
+		menuFunctions['['] = HomeSystemFunctions::notDevelopedYet;
+		menuFunctions['Q'] = [this]() {return this->saveOnExit();  }; // 'overiding' default menu Q function
 
-	HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader);
+	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader)); 
 }
 
 shared_ptr<HomeDevice> HomeSystem::findDevice(string name) {
@@ -75,13 +76,15 @@ bool HomeSystem::isDevice(string name) {
 }
 
 bool HomeSystem::addDevice() {
+	map<string, string> display;
+	vector<string> ignore;
+	do {
+		display = this->typeNames;
+		// numbers in headers are so they are displayed in correct order
+		display["0intro"] = "Enter from the following numbers to create corisponding devices: \n"; // spell check
+		ignore = { "0intro" };
 
-	map<string, string> display = this->typeNames;
-	// numbers in headers are so they are displayed in correct order
-	display["0intro"] = "Enter from the following numbers to create corisponding devices: \n"; // spell check
-	vector<string> ignore = { "0intro"};
-
-	HomeSystemFunctions::menuDisplay(display, this->typeCreateFunctions, ignore);
+	} while(HomeSystemFunctions::menuDisplay(display, this->typeCreateFunctions, ignore));
 
 	return true; 
 }
@@ -118,37 +121,37 @@ bool HomeSystem::listDevices(int startIndex) {
 		map<char, function<bool()>> menuFunctions;
 		vector<string> ignore = { "0intro", "0Page" };
 		
+		do {
+			// numbers in headers are so they are displayed in correct order
+			menuDispaly["0intro"] = "Select from the following to do that device's Quick Action: \n";
+			if (devicesLength % 10 > 1) {
+				menuDispaly["0Page"] = "Page " + to_string(devicesLength % (startIndex + 1) + 1) + " of " + to_string(devicesLength % 10) + " \n";
+			}
+			int i;
+			for (i = startIndex; i < devicesLength && i < (startIndex + 10); i++) {
+				// geting Devices
+				string indexStr = to_string(i + 1 - startIndex); // +1 so it's 1 to 9 and not 0 to 8; - startIndex so its consitently 1 to 9 and not 9 - 17 ect for diffent startIndex other than 0
+				char indexChar = indexStr[0];
+				const std::type_info& typeInfo = typeid((*(devices)[i]));
+				shared_ptr<HomeDevice>  device = (devices)[i];
 
-		// numbers in headers are so they are displayed in correct order
-		menuDispaly["0intro"] = "Select from the following to do that device's Quick Action: \n";
-		if (devicesLength % 10 > 1) {
-			menuDispaly["0Page"] = "Page " + to_string(devicesLength % (startIndex + 1) + 1) + " of " + to_string(devicesLength % 10) + " \n";
-		}
-		int i;
-		for (i = startIndex; i < devicesLength && i < (startIndex + 10); i++) {
-			// geting Devices
-			string indexStr = to_string(i + 1 - startIndex); // +1 so it's 1 to 9 and not 0 to 8; - startIndex so its consitently 1 to 9 and not 9 - 17 ect for diffent startIndex other than 0
-			char indexChar = indexStr[0];
-			const std::type_info& typeInfo = typeid((*(devices)[i]));
-			shared_ptr<HomeDevice>  device = (devices)[i];
+				// setting up display 
+				menuDispaly[indexStr] = ": " + device->quickViewStr() + "\n";
+				menuFunctions[indexChar] = [device]() {return device->quickAction(); };
+			}
+			// adding next page function
+			if (i < devicesLength) {
+				menuDispaly["N"] = ": Next Page \n";
+				menuFunctions['N'] = [this, i]() {return this->listDevices(i); }; // using i here as i will inciment then exit the for loop so will be thge next index for display
+			}
+			// adding previous page function
+			else if (i > 9) {
+				menuDispaly["P"] = ": Previous Page \n";
+				int previousStartIndex = i - 10; // as im goingfrom 0 to 10 (not 9 as i will inciment then exit the for loop) 
+				menuFunctions['P'] = [this, previousStartIndex]() {return this->listDevices(previousStartIndex); };
+			}
 
-			// setting up display 
-			menuDispaly[indexStr] = ": " + device->quickViewStr() + "\n";
-			menuFunctions[indexChar] = [device]() {return device->quickAction(); };
-		}
-		// adding next page function
-		if (i < devicesLength) {
-			menuDispaly["N"] = ": Next Page \n";
-			menuFunctions['N'] = [this, i]() {return this->listDevices(i); }; // using i here as i will inciment then exit the for loop so will be thge next index for display
-		}
-		// adding previous page function
-		else if (i > 9) {
-			menuDispaly["P"] = ": Previous Page \n" ;
-			int previousStartIndex = i - 10; // as im goingfrom 0 to 10 (not 9 as i will inciment then exit the for loop) 
-			menuFunctions['P'] = [this, previousStartIndex]() {return this->listDevices(previousStartIndex); };
-		}
-
-		HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignore);
+		} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignore));
 	}
 	else {
 		cout << "\n --- No Devices to Dsiaply --- \n"; 
@@ -173,7 +176,7 @@ bool HomeSystem::rename() { // for home system
 	}
 	else {
 		this->name = input;
-		cout << "\n Name Set Reset To see name change \n";
+		cout << "\n Name Set \n";
 		return true;
 	}
 }
