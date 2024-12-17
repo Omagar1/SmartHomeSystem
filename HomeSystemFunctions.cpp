@@ -1,11 +1,13 @@
 #include "HomeSystemFunctions.h"
+#include "ThreadManager.h"
 
-bool HomeSystemFunctions::menuDisplay(map<string, string> dispaly, map<char, function<bool()>> functions, vector<string> dontDisplay) {
+bool HomeSystemFunctions::menuDisplay(map<string, string> dispaly, map<char, function<bool()>> functions, ThreadManager* threadManger, vector<string> dontDisplay) {
 	// returns ture if menu neds to be called again, returns false if it donest
 	// done this way so display can update with new data that might have channged from functions called in the menu system running
 	string input;
 	functions.insert({ 'Q', []() { return false; } });// so if a caller already has a function for exit they can call that instead do this default
 
+	threadManger->getMutex().lock();// locking so therse no confusing interupts
 	HomeSystemFunctions::displayOptions(dispaly, dontDisplay);
 	cout << "Q: Exit \n";
 	cout << "Input: ";
@@ -15,10 +17,12 @@ bool HomeSystemFunctions::menuDisplay(map<string, string> dispaly, map<char, fun
 	if (functions.find(input[0]) != functions.end()) {
 		char key = input[0];
 
-		 return functions[key]();
+		threadManger->getMutex().unlock(); // uncloking as the function may lock the mutex 
+		return functions[key](); 
 	}
 	else {
 		cout << "\n ### Invalid input Try again: ### \n";
+		threadManger->getMutex().unlock(); // unlocking so interupts can happen In between displays
 		return true;
 	}
 }

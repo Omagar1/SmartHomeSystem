@@ -55,7 +55,7 @@ void HomeDevice::menu() {
 		menuFunctions['2'] = [this]() {return this->rename(this->homeSystem); };
 		menuFunctions['D'] = [this]() {return this->getHomeSystem()->deleteDevice(this); };
 
-	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader));
+	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, this->homeSystem->getThreadManagerPtr(), ignoreHeader));
 }
 
 void HomeDevice::saveOnExit(string filePath) {

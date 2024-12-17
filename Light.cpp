@@ -70,7 +70,7 @@ void Light::menu() {
 		menuFunctions['4'] = [this]() {return this->setSleepTimer(); };
 		menuFunctions['D'] = [this]() {return this->getHomeSystem()->deleteDevice(this); };
 
-	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader));
+	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, this->getHomeSystem()->getThreadManagerPtr(), ignoreHeader));
 }
 
 void Light::saveOnExit(string filePath) {

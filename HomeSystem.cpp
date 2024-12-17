@@ -46,7 +46,7 @@ void HomeSystem::menu() {
 		menuFunctions['['] = HomeSystemFunctions::notDevelopedYet;
 		menuFunctions['Q'] = [this]() {return this->saveOnExit();  }; // 'overiding' default menu Q function
 
-	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader)); 
+	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, this->threadManager, ignoreHeader)); 
 }
 
 shared_ptr<HomeDevice> HomeSystem::findDevice(string name) {
@@ -84,7 +84,7 @@ bool HomeSystem::addDevice() {
 		display["0intro"] = "Enter from the following numbers to create corisponding devices: \n"; // spell check
 		ignore = { "0intro" };
 
-	} while(HomeSystemFunctions::menuDisplay(display, this->typeCreateFunctions, ignore));
+	} while(HomeSystemFunctions::menuDisplay(display, this->typeCreateFunctions, this->threadManager, ignore));
 
 	return true; 
 }
@@ -151,7 +151,7 @@ bool HomeSystem::listDevices(int startIndex) {
 				menuFunctions['P'] = [this, previousStartIndex]() {return this->listDevices(previousStartIndex); };
 			}
 
-		} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignore));
+		} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, this->threadManager, ignore));
 	}
 	else {
 		cout << "\n --- No Devices to Dsiaply --- \n"; 
@@ -162,21 +162,25 @@ bool HomeSystem::listDevices(int startIndex) {
 
 bool HomeSystem::rename() { // for home system
 	string input;
+	this->threadManager->getMutex().lock(); // to prevent confusing interupts 
 	cout << "Rename " + this->name + " \n";
 	cout << "Enter new name or  Q to cancel \n";
 	cout << "Input: ";
 	cin >> input;
 	input = HomeSystemFunctions::trim(input);
 	if (input == "Q") {
+		this->threadManager->getMutex().unlock();
 		return true; // the return val is to do with the exiting the menue system that this function might be called in not the result of the function
 	}
 	else if (input == "") {
 		cout << "\n ### Name Cannot Be Blank! #### \n ";
+		this->threadManager->getMutex().unlock();
 		return rename();
 	}
 	else {
 		this->name = input;
 		cout << "\n Name Set \n";
+		this->threadManager->getMutex().unlock();
 		return true;
 	}
 }
@@ -189,6 +193,7 @@ bool HomeSystem::createLight() {
 	// get params
 	LightParams* params = nullptr;
 	do {
+		this->threadManager->getMutex().lock(); // to prevent confusing interupts 
 		if (params != nullptr) { 
 			cout << "\n ### Invalid Input ### \n ";  
 			cout << params->errorMsg<< "\n";
@@ -199,6 +204,7 @@ bool HomeSystem::createLight() {
 			params->paramsCorrect = false;
 			params->errorMsg = "\n ### Name Already Taken ####  \n"; 
 		}
+		this->threadManager->getMutex().unlock();
 	} while (!params->paramsCorrect);
 
 	// Create new light object 
@@ -218,6 +224,7 @@ bool HomeSystem::createTempHumidSensor() {
 	// get params
 	Params* params = nullptr;
 	do {
+		this->threadManager->getMutex().lock(); // to prevent confusing interupts 
 		if (params != nullptr) { 
 			cout << "\n ### Invalid Input ### \n ";  
 			cout << params->errorMsg<< "\n";
@@ -228,6 +235,7 @@ bool HomeSystem::createTempHumidSensor() {
 			params->paramsCorrect = false;
 			params->errorMsg = "\n ### Name Already Taken ####  \n"; 
 		}
+		this->threadManager->getMutex().unlock();
 	} while (!params->paramsCorrect);
 
 	// Create new TempHumidSensor object 

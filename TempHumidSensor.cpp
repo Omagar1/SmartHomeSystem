@@ -98,6 +98,6 @@ void TempHumidSensor::menu() {
 		menuFunctions['4'] = [this]() {return this->displayHistoricData(); };
 		menuFunctions['D'] = [this]() {return this->getHomeSystem()->deleteDevice(this); };
 
-	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, ignoreHeader));
+	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, this->getHomeSystem()->getThreadManagerPtr(), ignoreHeader));
 }
 
