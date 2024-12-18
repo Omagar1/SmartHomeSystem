@@ -223,7 +223,7 @@ bool HomeSystem::createLight() {
 	// Add object to devices vector 
 	this->devices.push_back(newLight); 
 	
-	cout << "Light " << params->name << " has been added \n"; 
+	cout << *newLight << " has been added \n";
 	// cleaning up memory
 	delete(params); 
 
@@ -254,12 +254,44 @@ bool HomeSystem::createTempHumidSensor() {
 	// Add object to devices vector 
 	this->devices.push_back(newTempHumidSensor);
 	
-	cout << "Temperature and Humidity Sensor:  " << params->name << " has been added \n"; 
+	cout << *newTempHumidSensor << " has been added \n";
 	// cleaning up memory
 	delete(params); 
 
 	return false; // as after creation we want to return to main menu 
 	
+}
+
+bool HomeSystem::createHeatingThermostat() {
+	// get params
+	HeatingThermostatParams* params = nullptr;
+	do {
+		this->threadManager->getMutex().lock(); // to prevent confusing interupts 
+		if (params != nullptr) {
+			cout << "\n ### Invalid Input ### \n ";
+			cout << params->errorMsg << "\n";
+		}
+
+		params = HeatingThermostat::getParams();
+		if (this->isDevice(params->name)) {
+			params->paramsCorrect = false;
+			params->errorMsg = "\n ### Name Already Taken ####  \n";
+		}
+		this->threadManager->getMutex().unlock();
+	} while (!params->paramsCorrect);
+
+	// Create new HeatingThermostat object 
+	shared_ptr<HeatingThermostat> newHeatingThermostat = make_shared<HeatingThermostat>(params->name, this, params->temprature);
+
+	// Add object to devices vector 
+	this->devices.push_back(newHeatingThermostat);
+
+	cout << *newHeatingThermostat << " has been added \n";
+	// cleaning up memory
+	delete(params);
+
+	return false; // as after creation we want to return to main menu 
+
 }
 
 bool HomeSystem::saveOnExit() {
@@ -293,7 +325,20 @@ bool HomeSystem::load() {
 				shared_ptr<TempHumidSensor> device = make_shared<TempHumidSensor>(deviceDataVector[1], this, onVal);
 				// add to devices vector
 				this->devices.push_back(device);
-			} // add devies as they are developed
+			} 
+			else if (deviceDataVector[0] == "Heating Thermostat") {// will be in format:  type,name,onVal,temp;
+				// format params
+				bool onVal = stoi(deviceDataVector[2]);
+				int temprature = stoi(deviceDataVector[3]); 
+				// create object
+				shared_ptr<HeatingThermostat> device = make_shared<HeatingThermostat>(deviceDataVector[1], this, onVal, temprature);
+				// add to devices vector
+				this->devices.push_back(device);
+			}
+			
+			
+			
+			// add devies as they are developed
 		}
 		
 	}

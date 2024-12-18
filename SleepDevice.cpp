@@ -2,7 +2,8 @@
 #include "HomeSystem.h"
 
 SleepDevice::SleepDevice(string name, HomeSystem* homeSystem, bool onVal) : HomeDevice(name, homeSystem, onVal) {}
-
+SleepDevice::SleepDevice(){}
+ 
 bool SleepDevice::setSleepTimer() {
 	// get input on time to sleep for
 	int timeInMins;

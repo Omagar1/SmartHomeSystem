@@ -2,11 +2,13 @@
 #include "HomeSystem.h"
 
 Schedule::Schedule(string name, HomeSystem* homeSystem, bool onVal) : HomeDevice(name, homeSystem, onVal) {
-	this->onFrom = nullptr;
-	this->onUntil = nullptr;
+	this->onFrom = new tm;
+	this->onUntil = new tm;
 	this->userTurnedOn = false; 
 	homeSystem->getThreadManagerPtr()->createThread(&Schedule::shouldBeOnThread, this); // creates a thread that checks if the device should be switched on
 }
+Schedule::Schedule() {}
+
 Schedule::~Schedule() {
 
 	if (this->onFrom != nullptr)
@@ -27,6 +29,7 @@ void Schedule::setSchedule(time_t end) {
 	setSchedule(start, end);
 	this->setOnVal(false); // as start is set to current time
 }
+
 
 bool Schedule::shouldBeOn() {
 	// checks if 

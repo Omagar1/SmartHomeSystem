@@ -39,10 +39,10 @@
     <ClCompile Include="TempHumidSensor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CommonFunctions.cpp">
+    <ClCompile Include="ThreadManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ThreadManager.cpp">
+    <ClCompile Include="HeatingThermostat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,10 +71,10 @@
     <ClInclude Include="TempHumidSensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CommonFunctions.h">
+    <ClInclude Include="ThreadManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ThreadManager.h">
+    <ClInclude Include="HeatingThermostat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

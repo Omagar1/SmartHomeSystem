@@ -1,6 +1,7 @@
 #include "HomeDevice.h"
 #include "HomeSystem.h"
 HomeDevice::HomeDevice(string name, HomeSystem* homeSystem, bool onVal): name(name), homeSystem(homeSystem), on(onVal) {}
+HomeDevice::HomeDevice(){}
 HomeDevice::~HomeDevice(){
 	this->homeSystem = nullptr; // removing pointer but not cleaning up memorary becuse we are not deleting home system 
 }
@@ -64,10 +65,7 @@ void HomeDevice::saveOnExit(string filePath) {
 	HomeSystemFunctions::storeData(filePath, data);
 }
 
-ostream& operator<<(ostream& os, const HomeDevice& outDevice) {
-	os << outDevice.getTypeStr() << outDevice.name; 
-	return os; 
-}
+
 
 bool HomeDevice::compareByType(const shared_ptr<HomeDevice> lhs, const shared_ptr<HomeDevice> rhs) {
 	if (lhs->getTypeStr() == rhs->getTypeStr()) {
@@ -106,6 +104,10 @@ bool HomeDevice::rename(HomeSystem* homeSystem) { // for device
 		cout << "\n Name Set \n";
 		return true;
 	}
+}
+ostream& operator<<(ostream& os, const HomeDevice& outDevice) {
+	os << outDevice.getTypeStr() << " " << outDevice.getName();
+	return os;
 }
 
 bool HomeDevice::operator>(const HomeDevice& rhs) const { 

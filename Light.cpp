@@ -1,6 +1,6 @@
 #include "Light.h"
 #include "HomeSystem.h"
-Light::Light(string name, HomeSystem* homeSystem, float brightness, bool onVal): SleepDevice(name, homeSystem, onVal),  brightness(brightness) {}
+Light::Light(string name, HomeSystem* homeSystem, float brightness, bool onVal): HomeDevice(name, homeSystem, onVal), SleepDevice(name, homeSystem, onVal), brightness(brightness) {}
 
 LightParams* Light::getParams() {
 	LightParams* params = new LightParams();

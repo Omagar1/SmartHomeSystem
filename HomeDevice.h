@@ -15,11 +15,12 @@ class HomeDevice
 {
 	public: 
 		HomeDevice(string name, HomeSystem* homeSystem, bool onVal = false);
+		
 		~HomeDevice(); 
 		// --- getters ---
-		inline string getName();
+		inline string getName() const;
 		static Params* getParams();
-		inline HomeSystem* getHomeSystem();
+		inline HomeSystem* getHomeSystem()const;
 		inline virtual string getTypeStr() const;
 		// --- setters ---
 		inline void setName(string newName);
@@ -38,6 +39,7 @@ class HomeDevice
 		
 
 	protected:
+		HomeDevice();
 		bool rename(HomeSystem* homeSystem);
 		inline bool getOnVal();
 		inline string getOnValStr(); 
@@ -51,8 +53,8 @@ class HomeDevice
 		
 		
 };
-string HomeDevice::getName() { return this->name; }
-HomeSystem* HomeDevice::getHomeSystem() { return this->homeSystem; }
+string HomeDevice::getName() const { return this->name; }
+HomeSystem* HomeDevice::getHomeSystem() const { return this->homeSystem; }
 string HomeDevice::getTypeStr() const {
 	string type = (string)typeid(*this).name();
 	type.erase(type.begin(), type.begin() + 6); // removing "class"

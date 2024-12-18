@@ -8,7 +8,7 @@ struct LightParams : Params {
 	float brightness; 
 };
 
-class Light : public SleepDevice
+class Light : public  SleepDevice
 {
 public: 
 	Light(string name, HomeSystem* homeSystem, float brightness, bool onVal = false);
@@ -20,7 +20,7 @@ public:
 	// --- other stuff --- 
 	void menu() override;
 	void saveOnExit(string filePath) override;
-	/*virtual void load();*/
+
 	
 
 private:
