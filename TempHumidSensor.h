@@ -16,6 +16,7 @@ class TempHumidSensor : public HomeDevice
 {
 public:
 	TempHumidSensor(string Name, HomeSystem* homeSystem, bool onVal = false);
+	TempHumidSensor(Params* params, HomeSystem* homeSystem);
 	// --- getters ---
 	inline string getLastHumidReadingStr(); 
 	inline string getLastTempReadingStr();
@@ -27,7 +28,7 @@ public:
 	bool displayCurrentData();
 	bool displayHistoricData(); 
 	void setCurrentReading();
-	void generateHistoricData(ThreadManager* threadManager, int readEvery = 5); // readEvery: sets the time between readings in minutes
+	void generateHistoricData(shared_ptr<ThreadManager> threadManager, int readEvery = 5); // readEvery: sets the time between readings in minutes
 	// --- other funtcion Stuff --- 
 	void menu() override;
 	// dosent need a saveOnExit as it's stored functions are the same as HomeDevice

@@ -12,6 +12,7 @@ class Light : public  SleepDevice
 {
 public: 
 	Light(string name, HomeSystem* homeSystem, float brightness, bool onVal = false);
+	Light(LightParams* params, HomeSystem* homeSystem);
 	// --- getters --
 	static LightParams* getParams();
 	// --- quick action stuff ---

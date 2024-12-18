@@ -10,6 +10,7 @@ class HeatingThermostat : public Schedule
 public:
 	/*HeatingThermostat(string name, HomeSystem* homeSystem, int temprature, bool onVal = false);*/
 	HeatingThermostat(string name, HomeSystem* homeSystem, int temprature, bool onVal = false);
+	HeatingThermostat(HeatingThermostatParams* params, HomeSystem* homeSystem);
 	// --- getters --
 	static HeatingThermostatParams* getParams();
 	// --- quick action stuff ---

@@ -1,7 +1,7 @@
 #include "HomeSystemFunctions.h"
 #include "ThreadManager.h"
 
-bool HomeSystemFunctions::menuDisplay(map<string, string> dispaly, map<char, function<bool()>> functions, ThreadManager* threadManger, vector<string> dontDisplay, shared_ptr<string> input ) {
+bool HomeSystemFunctions::menuDisplay(map<string, string> dispaly, map<char, function<bool()>> functions, shared_ptr<ThreadManager> threadManger, vector<string> dontDisplay, shared_ptr<string> input ) {
 	// returns ture if menu neds to be called again, returns false if it donest
 	// done this way so display can update with new data that might have channged from functions called in the menu system running
 	// input is a passed shared_ptr so functions in the functions map can use the input taken in this function without having to have the distinction between functions with params and without

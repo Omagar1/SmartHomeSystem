@@ -5,7 +5,7 @@ ThreadManager::ThreadManager(): MAX_THREADS(std::thread::hardware_concurrency()-
 }
 ThreadManager::~ThreadManager() {
 	this->stopFlag = true;
-	std::cout << "\n --- Waiting For Threads to finnish Up --- \n "; 
+	std::cout << "\n --- Waiting For Threads to Finish Up --- \n "; 
 	for (std::thread& t : activeThreads) {
 		if (t.joinable()) { 
 			t.join(); 

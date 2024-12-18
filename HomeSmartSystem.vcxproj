@@ -135,6 +135,7 @@
     <ClCompile Include="HomeSystemFunctions.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Radiator.cpp" />
     <ClCompile Include="Schedule.cpp" />
     <ClCompile Include="SleepDevice.cpp" />
     <ClCompile Include="TempHumidSensor.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="HomeSystemFunctions.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Params.h" />
+    <ClInclude Include="Radiator.h" />
     <ClInclude Include="Schedule.h" />
     <ClInclude Include="SleepDevice.h" />
     <ClInclude Include="TempHumidSensor.h" />

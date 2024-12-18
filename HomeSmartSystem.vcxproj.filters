@@ -45,6 +45,9 @@
     <ClCompile Include="HeatingThermostat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Radiator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HomeSystem.h">
@@ -75,6 +78,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeatingThermostat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Radiator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

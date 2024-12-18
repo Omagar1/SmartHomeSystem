@@ -23,7 +23,7 @@ public:
 
 	inline static void displayOptions(map<string, string>outArr, vector<string> dontDisplay = vector<string>());
 	inline static bool notDevelopedYet();
-	static bool menuDisplay(const map<string, string> dispaly, const map<char, function<bool()>> functions, ThreadManager* threadManger, const vector<string> dontDisplay = vector<string>(), shared_ptr<string> input = make_shared<string>());
+	static bool menuDisplay(const map<string, string> dispaly, const map<char, function<bool()>> functions, shared_ptr<ThreadManager> threadManger, const vector<string> dontDisplay = vector<string>(), shared_ptr<string> input = make_shared<string>());
 	// --- convertion stuff ---
 	template<typename T>
 	inline static bool canConvertStrToType(const string str);

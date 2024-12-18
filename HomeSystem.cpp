@@ -6,14 +6,13 @@
 HomeSystem::HomeSystem(string name, string filePath, bool loadFromFile) : name(name), filePath(filePath+"/"+name+"HSS") {
 
 	this->devices = vector<shared_ptr<HomeDevice>>();
-	this->threadManager = new ThreadManager();
+	this->threadManager = make_shared<ThreadManager>();
 	if (loadFromFile)
 		load(); 
 }
 
 HomeSystem::~HomeSystem() {
-	delete(this->threadManager);
-	this->threadManager = nullptr; 
+	/*this->threadManager = nullptr; */
 }
 
 void HomeSystem::menu() {
@@ -208,103 +207,6 @@ bool HomeSystem::rename() { // for home system
 }
 
 
-// --- Device Creation functions --- 
-
-
-bool HomeSystem::createLight() {
-	// get params
-	LightParams* params = nullptr;
-	do {
-		this->threadManager->getMutex().lock(); // to prevent confusing interupts 
-		if (params != nullptr) { 
-			cout << "\n ### Invalid Input ### \n ";  
-			cout << params->errorMsg<< "\n";
-		}
-
-		params = Light::getParams();
-		if (this->isDevice(params->name)) {
-			params->paramsCorrect = false;
-			params->errorMsg = "\n ### Name Already Taken ####  \n"; 
-		}
-		this->threadManager->getMutex().unlock();
-	} while (!params->paramsCorrect);
-
-	// Create new light object 
-	shared_ptr<Light> newLight = make_shared<Light>(params->name, this, params->brightness);
-
-	// Add object to devices vector 
-	this->devices.push_back(newLight); 
-	
-	cout << *newLight << " has been added \n";
-	// cleaning up memory
-	delete(params); 
-
-	return false; // as after creation we want to return to main menu 
-	
-}
-bool HomeSystem::createTempHumidSensor() {
-	// get params
-	Params* params = nullptr;
-	do {
-		this->threadManager->getMutex().lock(); // to prevent confusing interupts 
-		if (params != nullptr) { 
-			cout << "\n ### Invalid Input ### \n ";  
-			cout << params->errorMsg<< "\n";
-		}
-
-		params = TempHumidSensor::getParams();
-		if (this->isDevice(params->name)) {
-			params->paramsCorrect = false;
-			params->errorMsg = "\n ### Name Already Taken ####  \n"; 
-		}
-		this->threadManager->getMutex().unlock();
-	} while (!params->paramsCorrect);
-
-	// Create new TempHumidSensor object 
-	shared_ptr<TempHumidSensor> newTempHumidSensor = make_shared<TempHumidSensor>(params->name, this);
-
-	// Add object to devices vector 
-	this->devices.push_back(newTempHumidSensor);
-	
-	cout << *newTempHumidSensor << " has been added \n";
-	// cleaning up memory
-	delete(params); 
-
-	return false; // as after creation we want to return to main menu 
-	
-}
-
-bool HomeSystem::createHeatingThermostat() {
-	// get params
-	HeatingThermostatParams* params = nullptr;
-	do {
-		this->threadManager->getMutex().lock(); // to prevent confusing interupts 
-		if (params != nullptr) {
-			cout << "\n ### Invalid Input ### \n ";
-			cout << params->errorMsg << "\n";
-		}
-
-		params = HeatingThermostat::getParams();
-		if (this->isDevice(params->name)) {
-			params->paramsCorrect = false;
-			params->errorMsg = "\n ### Name Already Taken ####  \n";
-		}
-		this->threadManager->getMutex().unlock();
-	} while (!params->paramsCorrect);
-
-	// Create new HeatingThermostat object 
-	shared_ptr<HeatingThermostat> newHeatingThermostat = make_shared<HeatingThermostat>(params->name, this, params->temprature);
-
-	// Add object to devices vector 
-	this->devices.push_back(newHeatingThermostat);
-
-	cout << *newHeatingThermostat << " has been added \n";
-	// cleaning up memory
-	delete(params);
-
-	return false; // as after creation we want to return to main menu 
-
-}
 
 bool HomeSystem::saveOnExit() {
 	HomeSystemFunctions::storeData(this->filePath, "", true); // will overwrite exiting file so only most upto date version is stored
@@ -347,9 +249,15 @@ bool HomeSystem::load() {
 				// add to devices vector
 				this->devices.push_back(device);
 			}
-			
-			
-			
+			else if (deviceDataVector[0] == "Radiator") {// will be in format:  type,name,onVal,temp;
+				// format params
+				bool onVal = stoi(deviceDataVector[2]);
+				int temprature = stoi(deviceDataVector[3]);
+				// create object
+				shared_ptr<Radiator> device = make_shared<Radiator>(deviceDataVector[1], this, onVal, temprature);
+				// add to devices vector
+				this->devices.push_back(device);
+			}
 			// add devies as they are developed
 		}
 		
@@ -377,6 +285,7 @@ bool HomeSystem::deleteDevice(HomeDevice* deviceToDelete) {
 	else {
 		cout << "\n ### Invalid Input ### \n ";
 		deleteDevice(deviceToDelete);
+		return false; 
 	}
 
 	

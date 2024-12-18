@@ -24,12 +24,12 @@ bool SleepDevice::setSleepTimer() {
 	
 
 	// creates thread
-	ThreadManager* threadManager = this->getHomeSystem()->getThreadManagerPtr(); 
+	shared_ptr<ThreadManager> threadManager = this->getHomeSystem()->getThreadManagerPtr(); 
 	threadManager->createThread(&SleepDevice::sleepTimeAction, this, timeInMins, threadManager);
 
 	return true;
 }
-void SleepDevice::sleepTimeAction(int timeInMins, ThreadManager* threadManager) {
+void SleepDevice::sleepTimeAction(int timeInMins, shared_ptr<ThreadManager> threadManager) {
 	this->setOnVal(false);
 	int i = 0;
 	// checks every 30 seconds if the stop flag its true; 

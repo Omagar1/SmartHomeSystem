@@ -17,10 +17,14 @@ TempHumidSensor::TempHumidSensor(string Name, HomeSystem* homeSystem, bool onVal
 	// storing data 
 	HomeSystemFunctions::storeData(this->FilePath, data, ":");
 	// --- setting up thread to generate historic data --- 
-	ThreadManager* threadManager = homeSystem->getThreadManagerPtr();
+	shared_ptr<ThreadManager> threadManager = homeSystem->getThreadManagerPtr();
 	threadManager->createThread(&TempHumidSensor::generateHistoricData, this, threadManager, 5); // last param is the time between reading, if i have time i will make this user set
-
 }
+TempHumidSensor::TempHumidSensor(Params* params, HomeSystem* homeSystem) : TempHumidSensor(params->name, homeSystem) {
+	delete(params);
+	params = nullptr;
+}
+
 
 
 bool TempHumidSensor::quickAction() {
@@ -63,7 +67,7 @@ bool TempHumidSensor::displayHistoricData() {
 	return true;
 }
 
-void TempHumidSensor::generateHistoricData(ThreadManager* threadManager, int readEvery) {
+void TempHumidSensor::generateHistoricData(shared_ptr<ThreadManager> threadManager, int readEvery) {
 
 	while (this->getOnVal() && threadManager->getStopFlag().load()) { // seccond value so when sytsem is closed the thread stops
 		std::this_thread::sleep_for(std::chrono::minutes(readEvery));

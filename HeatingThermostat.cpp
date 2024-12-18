@@ -2,6 +2,10 @@
 #include "HomeSystem.h"
 
 HeatingThermostat::HeatingThermostat(string name, HomeSystem* homeSystem, int temprature, bool onVal) : HomeDevice(name, homeSystem, onVal), Schedule(name, homeSystem, onVal), temprature(temprature) {}
+HeatingThermostat::HeatingThermostat(HeatingThermostatParams* params, HomeSystem* homeSystem) : HomeDevice(params->name, homeSystem), temprature(params->temprature) {
+	delete(params);
+	params = nullptr;
+}
 
 HeatingThermostatParams* HeatingThermostat::getParams() {
 	HeatingThermostatParams* params = new HeatingThermostatParams();
