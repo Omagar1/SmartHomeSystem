@@ -1,14 +1,108 @@
-﻿  HomeDevice.cpp
+﻿  HeatingThermostat.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'HeatingThermostat.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(65,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'HeatingThermostat.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(77,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'HeatingThermostat.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HeatingThermostat.cpp(25,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  HomeDevice.cpp
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
   (compiling source file 'HomeDevice.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(64,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(65,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
   (compiling source file 'HomeDevice.cpp')
   
-C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(76,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(77,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
   (compiling source file 'HomeDevice.cpp')
   
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeDevice.cpp(130,55): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
 C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeDevice.cpp(148,55): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  HomeSystem.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'HomeSystem.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(65,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'HomeSystem.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(77,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'HomeSystem.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(104,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(138,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  HomeSystemFunctions.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'HomeSystemFunctions.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(65,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'HomeSystemFunctions.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(77,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'HomeSystemFunctions.cpp')
+  
+  Light.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'Light.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(65,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'Light.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(77,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'Light.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+  Schedule.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'Schedule.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(65,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'Schedule.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(77,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'Schedule.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+  SleepDevice.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'SleepDevice.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(65,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'SleepDevice.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(77,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'SleepDevice.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+  TempHumidSensor.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'TempHumidSensor.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(65,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'TempHumidSensor.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(77,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'TempHumidSensor.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\TempHumidSensor.cpp(10,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\TempHumidSensor.cpp(11,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(17,14): warning C4091: 'static ': ignored on left of 'HomeSystemFunctions' when no variable is declared
+  (compiling source file 'main.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(65,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'main.cpp')
+  
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystemFunctions.h(77,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  (compiling source file 'main.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+  Generating Code...
+C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\HomeSystem.cpp(384,1): warning C4715: 'HomeSystem::deleteDevice': not all control paths return a value
   HomeSmartSystem.vcxproj -> C:\Users\josia\Documents\UNI Stuff\CS\24 25\Advanced Programing\SmartHomeSystem\x64\Debug\HomeSmartSystem.exe

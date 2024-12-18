@@ -23,7 +23,7 @@ public:
 
 	inline static void displayOptions(map<string, string>outArr, vector<string> dontDisplay = vector<string>());
 	inline static bool notDevelopedYet();
-	static bool menuDisplay(const map<string, string> dispaly, const map<char, function<bool()>> functions, ThreadManager* threadManger, const vector<string> dontDisplay = vector<string>());
+	static bool menuDisplay(const map<string, string> dispaly, const map<char, function<bool()>> functions, ThreadManager* threadManger, const vector<string> dontDisplay = vector<string>(), shared_ptr<string> input = make_shared<string>());
 	// --- convertion stuff ---
 	template<typename T>
 	inline static bool canConvertStrToType(const string str);
@@ -34,6 +34,7 @@ public:
 	static vector<string> loadData(string filePath);
 	// --- helpful stuff --- 
 	static string trim(string str); // removes whitespace from start and end of string
+	static string trim(string str, char toRemoveFromStart, char toRemoveFromEnd); // removes any char start and end of string 
 	static vector<string> split(string str, char delimiter = ','); 
 	
 };

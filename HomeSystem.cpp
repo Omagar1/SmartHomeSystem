@@ -21,6 +21,7 @@ void HomeSystem::menu() {
 	map<string, string> menuDispaly;
 	map<char, function<bool()>> menuFunctions;
 	vector<string> ignoreHeader;
+	shared_ptr<string> input = make_shared<string>(); // to be defined in menuDisplay()
 	do {
 		// numbers in headers are so they are displayed in correct order
 		menuDispaly = {
@@ -37,16 +38,27 @@ void HomeSystem::menu() {
 
 		ignoreHeader = { "0header", "0intro" };
 		
+		
 		menuFunctions['1'] = [this]() {return this->listDevices(); };
 		menuFunctions['2'] = [this]() {return this->listDevices(0,NAME); };
 		menuFunctions['3'] = [this]() {return this->listDevices(0,TYPE); };
 		menuFunctions['4'] = [this]() {return this->selectDevice(); };
 		menuFunctions['5'] = bind(&HomeSystem::addDevice, this);
 		menuFunctions['6'] = [this]() {return this->rename();  };
-		menuFunctions['['] = HomeSystemFunctions::notDevelopedYet;
+		menuFunctions['['] = [this, input]() {
+			shared_ptr<HomeDevice> device = this->findDevice(HomeSystemFunctions::trim(*input, '[', ']')); 
+			if (device == nullptr) {
+				cout << "\n ### Requested device Dosent exist ### \n "; 
+			}
+			else {
+				device->quickView();
+			}
+			
+			return true; 
+		};
 		menuFunctions['Q'] = [this]() {return this->saveOnExit();  }; // 'overiding' default menu Q function
 
-	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, this->threadManager, ignoreHeader)); 
+	} while (HomeSystemFunctions::menuDisplay(menuDispaly, menuFunctions, this->threadManager, ignoreHeader, input)); 
 }
 
 shared_ptr<HomeDevice> HomeSystem::findDevice(string name) {

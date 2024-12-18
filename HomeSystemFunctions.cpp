@@ -1,21 +1,21 @@
 #include "HomeSystemFunctions.h"
 #include "ThreadManager.h"
 
-bool HomeSystemFunctions::menuDisplay(map<string, string> dispaly, map<char, function<bool()>> functions, ThreadManager* threadManger, vector<string> dontDisplay) {
+bool HomeSystemFunctions::menuDisplay(map<string, string> dispaly, map<char, function<bool()>> functions, ThreadManager* threadManger, vector<string> dontDisplay, shared_ptr<string> input ) {
 	// returns ture if menu neds to be called again, returns false if it donest
 	// done this way so display can update with new data that might have channged from functions called in the menu system running
-	string input;
+	// input is a passed shared_ptr so functions in the functions map can use the input taken in this function without having to have the distinction between functions with params and without
 	functions.insert({ 'Q', []() { return false; } });// so if a caller already has a function for exit they can call that instead do this default
 
 	threadManger->getMutex().lock();// locking so therse no confusing interupts
 	HomeSystemFunctions::displayOptions(dispaly, dontDisplay);
 	cout << "Q: Exit \n";
 	cout << "Input: ";
-	cin >> input;
+	cin >> *input;
 
 	// runs related funcution if input is a key of functions
-	if (functions.find(input[0]) != functions.end()) {
-		char key = input[0];
+	if (functions.find((*input)[0]) != functions.end()) {
+		char key = (*input)[0];
 
 		threadManger->getMutex().unlock(); // uncloking as the function may lock the mutex 
 		return functions[key](); 
@@ -118,6 +118,26 @@ string HomeSystemFunctions::trim(string str) {
 		return str; 
 	}
  
+}
+
+string HomeSystemFunctions::trim(string str, char toRemoveFromStart, char toRemoveFromEnd) {
+	// find first non whitespace
+	if (str != "") {
+		string::iterator startIt = str.begin();
+		string::iterator endIt = str.end() - 1;
+		while (startIt != endIt && (*startIt) == toRemoveFromStart) {
+			startIt++;
+		}
+		// find last
+		while (endIt != startIt && (*endIt) == toRemoveFromEnd) {
+			endIt--;
+		}
+		return string(startIt, endIt + 1);
+	}
+	else {
+		return str;
+	}
+
 }
 
 vector<string> HomeSystemFunctions::split(string str, char delimiter) {
