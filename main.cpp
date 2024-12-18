@@ -7,6 +7,22 @@
 #include"HomeSystemFunctions.h"
 using namespace std;
 
+//void runTests() {
+//	std::vector<HomeDevice*> devices = { 
+//		new HomeDevice("Alpha" , nullptr), 
+//		new HomeDevice("Beta" , nullptr),
+//		new HomeDevice("Gamma", nullptr),
+//		new HomeDevice("alpha", nullptr),
+//		new HomeDevice("beta", nullptr),
+//		new HomeDevice("gamma", nullptr)
+//	}; 
+//	for (size_t i = 0; i < devices.size(); ++i) {
+//		for (size_t j = 0; j < devices.size(); ++j) { 
+//			std::cout << "Comparing " << (*devices[i]).getName() << " < " << (*devices[j]).getName() << ": " << (*devices[i] < *devices[j] ? "true" : "false") << std::endl;
+//		}
+//	}
+//}
+
 
 int main() {
 	// check memory leaks 
@@ -23,6 +39,9 @@ int main() {
 
 
 	// --- tests --
+
+	/*runTests(); */
+
 	/*string testStr = "Hello World Its So Good to be here"; 
 	vector<string> testVector = HomeSystemFunctions::split(testStr, ' ');
 	for (string str : testVector) {

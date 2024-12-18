@@ -15,10 +15,17 @@
 
 using namespace std; 
 
-struct DeviceTypes {
-	map<string, string> names;
-	map<char, function<bool()>> createFunctions; 
+//struct DeviceTypes {
+//	map<string, string> names;
+//	map<char, function<bool()>> createFunctions; 
+//};
+
+enum SortByType{
+	AS_IS,
+	NAME,
+	TYPE
 };
+
 
 
 class HomeSystem
@@ -33,9 +40,7 @@ class HomeSystem
 		bool selectDevice();
 
 		//void quickDisplayDevice();
-		bool listDevices(int startIndex = 0);
-		/*void sortByName();
-		void sortByDevice();*/
+		bool listDevices(int startIndex = 0, SortByType sortBy = AS_IS);
 		bool saveOnExit();
 		bool load(); 
 		bool deleteDevice(HomeDevice* deviceToDelete);

@@ -38,8 +38,8 @@ void HomeSystem::menu() {
 		ignoreHeader = { "0header", "0intro" };
 		
 		menuFunctions['1'] = [this]() {return this->listDevices(); };
-		menuFunctions['2'] = HomeSystemFunctions::notDevelopedYet;
-		menuFunctions['3'] = HomeSystemFunctions::notDevelopedYet;
+		menuFunctions['2'] = [this]() {return this->listDevices(0,NAME); };
+		menuFunctions['3'] = [this]() {return this->listDevices(0,TYPE); };
 		menuFunctions['4'] = [this]() {return this->selectDevice(); };
 		menuFunctions['5'] = bind(&HomeSystem::addDevice, this);
 		menuFunctions['6'] = [this]() {return this->rename();  };
@@ -112,7 +112,17 @@ bool HomeSystem::selectDevice() {
 }
 
 
-bool HomeSystem::listDevices(int startIndex) {
+bool HomeSystem::listDevices(int startIndex, SortByType sortBy){
+	// sorting
+	if (sortBy == NAME) {
+		sort(this->devices.begin(), this->devices.end(), [](const shared_ptr<HomeDevice> &lhs, const shared_ptr<HomeDevice> &rhs) { 
+			return *lhs < *rhs; 
+			}); 
+	}
+	else if (sortBy == TYPE){
+		sort(this->devices.begin(), this->devices.end(), HomeDevice::compareByType);
+	}
+
 	int devicesLength = this->devices.size();
 	if (devicesLength > 0) {
 

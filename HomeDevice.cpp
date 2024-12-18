@@ -64,6 +64,24 @@ void HomeDevice::saveOnExit(string filePath) {
 	HomeSystemFunctions::storeData(filePath, data);
 }
 
+ostream& operator<<(ostream& os, const HomeDevice& outDevice) {
+	os << outDevice.getTypeStr() << outDevice.name; 
+	return os; 
+}
+
+bool HomeDevice::compareByType(const shared_ptr<HomeDevice> lhs, const shared_ptr<HomeDevice> rhs) {
+	if (lhs->getTypeStr() == rhs->getTypeStr()) {
+		return lhs < rhs; 
+	}
+	else if (lhs->getTypeStr() < rhs->getTypeStr()) {
+		return true; 
+	}
+	else {
+		return false; 
+	}
+}
+
+
 
 bool HomeDevice::rename(HomeSystem* homeSystem) { // for device 
 	string input;
@@ -89,6 +107,65 @@ bool HomeDevice::rename(HomeSystem* homeSystem) { // for device
 		return true;
 	}
 }
+
+bool HomeDevice::operator>(const HomeDevice& rhs) const { 
+	// im doing this manualy as I want numeric values in the string to count differnatly to count as well so test9 < test10 == true but aaaaaaaaaaa < b == true 
+	string::const_iterator lhsIt = (this->name).begin();
+	string::const_iterator rhsIt = (rhs.name).begin();
+	while (lhsIt != this->name.end() || rhsIt != rhs.name.end()) {
+		// making numeric values as I want them 
+		// lhs 
+		int lhsItAsciiVal = 0;
+		if (isdigit(*lhsIt)) {
+			int i = 0; 
+			// finding the whole number
+			while (lhsIt != this->name.end() && isdigit(*lhsIt)) {
+				i++;
+				lhsIt++; 
+			}
+			// calculating value
+			while (i > 0) {
+				lhsItAsciiVal += (static_cast<int>(*(lhsIt - i))) * (pow(10, i - 1)); // gets the asci value of the first numeric value encountered then multiplies that by a power of 10 based on if its a tens hundreds ects
+				i--; // then does the next number
+			}		
+		}
+		else {
+			lhsItAsciiVal = static_cast<int>(*lhsIt);
+		}
+		//rhs
+		int rhsItAsciiVal = 0;
+		if (isdigit(*rhsIt)) {
+			int i = 0;
+			// finding the whole number
+			while (rhsIt != rhs.name.end() &&isdigit(*rhsIt)) {
+				i++;
+				rhsIt++;
+			}
+			// calculating value
+			while (i > 0) {
+				rhsItAsciiVal += (static_cast<int>(*(rhsIt - i))) * (pow(10, i - 1)); // gets the asci value of the first numeric value encountered then multiplies that by a power of 10 based on if its a tens hundreds ects
+				i--; // then does the next number
+			}
+		}
+		else {
+			rhsItAsciiVal = static_cast<int>(*rhsIt);
+		}
+		// comparason
+		if (lhsItAsciiVal > rhsItAsciiVal) {
+			return true;
+		}
+		else if (lhsItAsciiVal < rhsItAsciiVal) {
+			return false;
+		}
+		else {
+			lhsIt++;
+			rhsIt++; 
+		}
+		
+	}
+	return false; // Case: the names are identical so the lhs !> rhs
+}
+
 
 
 

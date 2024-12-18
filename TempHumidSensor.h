@@ -19,7 +19,7 @@ public:
 	// --- getters ---
 	inline string getLastHumidReadingStr(); 
 	inline string getLastTempReadingStr();
-	inline string getTypeStr() override;
+	inline string getTypeStr() const override;
 	// --- quick action stuff ---
 	inline string quickViewStr(string delimiter = " ") override;
 	bool quickAction() override;
@@ -46,7 +46,7 @@ string TempHumidSensor::getLastHumidReadingStr() {
 string TempHumidSensor::getLastTempReadingStr() {
 	return to_string(this->lastTempReading ) + "C";
 }
-string TempHumidSensor::getTypeStr() {
+string TempHumidSensor::getTypeStr() const{
 	return "Temperature and Humidity Sensor";
 }
 string TempHumidSensor::quickViewStr(string delimiter) {
