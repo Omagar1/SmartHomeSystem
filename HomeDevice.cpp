@@ -150,7 +150,7 @@ bool HomeDevice::operator>(const HomeDevice& rhs) const {
 		else {
 			rhsItAsciiVal = static_cast<int>(*rhsIt);
 		}
-		// comparason
+		// comparison
 		if (lhsItAsciiVal > rhsItAsciiVal) {
 			return true;
 		}
@@ -158,6 +158,7 @@ bool HomeDevice::operator>(const HomeDevice& rhs) const {
 			return false;
 		}
 		else {
+			// case the charecters or numeric value is identical - not the enntire string
 			lhsIt++;
 			rhsIt++; 
 		}

@@ -28,19 +28,7 @@ bool HomeSystemFunctions::menuDisplay(map<string, string> dispaly, map<char, fun
 }
 
   
-bool HomeSystemFunctions::canConvertToFloat(const string& str) {
-	try { 
-		stof(str); 
-		return true; 
-	} 
-	catch (const invalid_argument&) 
-	{ 
-		return false;
-	} 
-	catch (const out_of_range&) { 
-		return false; 
-	} 
-}
+
 string HomeSystemFunctions::timeToStr(time_t time, string format) {
 	char str[80]; // 80 comes form example in https://cplusplus.com/reference/ctime/strftime/
 	std::tm timeInfo;

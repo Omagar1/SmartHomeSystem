@@ -17,13 +17,16 @@ class ThreadManager;
 static class HomeSystemFunctions
 {
 public:
+	// --- display stuff --- 
 	template <size_t N>
 	inline static void displayOptions(string(&outArr)[N]);
 
 	inline static void displayOptions(map<string, string>outArr, vector<string> dontDisplay = vector<string>());
 	inline static bool notDevelopedYet();
 	static bool menuDisplay(const map<string, string> dispaly, const map<char, function<bool()>> functions, ThreadManager* threadManger, const vector<string> dontDisplay = vector<string>());
-	static bool canConvertToFloat(const string& str);
+	// --- convertion stuff ---
+	template<typename T>
+	inline static bool canConvertStrToType(const string str);
 	static string timeToStr(time_t time, string format = "%Y-%m-%d %H:%M:%S"); 
 	// --- file stuff ---
 	static bool storeData(string filePath, vector<string> data, string delimiter = ",", bool overWrite = false);
@@ -52,5 +55,30 @@ inline void HomeSystemFunctions::displayOptions(map<string, string>outArr , vect
 		}
 	}
 }
+
 inline bool HomeSystemFunctions::notDevelopedYet() { cout << "Feature still in devlopment"; return true; }
+
+template<>
+inline bool HomeSystemFunctions::canConvertStrToType<float>(const string str) {
+	try {
+		stof(str);
+		return true;
+	}
+	catch (...)
+	{
+		return false;
+	}
+}
+
+template<>
+inline bool HomeSystemFunctions::canConvertStrToType<int>(const string str) {
+	try {
+		stoi(str);
+		return true;
+	}
+	catch (...)
+	{
+		return false;
+	}
+}
 

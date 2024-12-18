@@ -18,7 +18,7 @@ LightParams* Light::getParams() {
 
 	cout << "\nBrightness (between 0 and 1.00): ";
 	cin >> temp;
-	if (temp != "" || HomeSystemFunctions::canConvertToFloat(temp)) {
+	if ( HomeSystemFunctions::canConvertStrToType<float>(temp) && temp != ""  ) {
 		float floatTemp = stof(temp);
 		if (floatTemp >= 0 && floatTemp <= 1) {
 			params->brightness = floatTemp;
